@@ -1,5 +1,5 @@
 # Tasnim - Enrollment System
-  This is a fork from Tasnim Enrollment System repo.
+This is a fork from [Ximple Enrollment System](https://github.com/ximplextech/ximple-enrollment).
 
   This project was created to enhance the existing Edusec Enrollment System which opted to make their software cloud-based and was not movement for about a year.
 
