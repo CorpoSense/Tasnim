@@ -1,16 +1,16 @@
-# Tasnim - Enrollment System
+# Tessnim - Enrollment System
 This is a fork from [Ximple Enrollment System](https://github.com/ximplextech/ximple-enrollment).
 
   This project was created to enhance the existing Edusec Enrollment System which opted to make their software cloud-based and was not movement for about a year.
 
 # INTRODUCTION
-  Tasnim Enrollment has a suite of selective modules specifically tailored to the requirements of education industry. Tasnim Enrollment is engineered and designed considering wide range of management functions within the university. With the use of Tasnim Enrollment, staff can be more accountable as it helps to know the performance of each department in just few seconds. Almost all departments within education industry (e. g. admission, administration, time table, etc) can be synchronized and accessed. Tasnim Enrollment helps to assign the responsibilities to employee staff and can reduce time wastage and can speed up the administrative functions. Core functions like admissions, students’ attendance in short entire range of university functions can be well performed by Tasnim Enrollment.
+  Tessnim Enrollment has a suite of selective modules specifically tailored to the requirements of education industry. Tessnim Enrollment is engineered and designed considering wide range of management functions within the university or school. With the use of Tessnim Enrollment, staff can be more accountable as it helps to know the performance of each department in just few seconds. Almost all departments within education industry (e. g. admission, administration, time table, etc) can be synchronized and accessed. Tessnim Enrollment helps to assign the responsibilities to employee staff and can reduce time wastage and can speed up the administrative functions. Core functions like admissions, students’ attendance in short entire range of university or school functions can be well performed by Tessnim Enrollment.
 
 ## Purpose
-  Tasnim Enrollment will help school administration manage enrollment and automates some tedious manual process that comes along with it.
+  Tessnim Enrollment will help school administration manage enrollment and automates some tedious manual process that comes along with it.
 
 ## Scope
-  Tasnim Enrollment will have College Management, Student Information, Employee Management, Course Management, Fees Management, Class Scheduling, Grades Management, and Online Payment.
+  Tessnim Enrollment will have College Management, Student Information, Employee Management, Course Management, Fees Management, Class Scheduling, Grades Management, and Online Payment.
 
 # FEATURES
 - Student Information System
@@ -71,20 +71,20 @@ Generate reports pertaining to fees collections, late payments, special fees, ch
 # INSTALLATION
 
 
-1. Move/Upload Tasnim-Enrollment to the web directory of your choice.
-2. Create a new single MySQL database for Tasnim-Enrollment to store all its tables.
-3. Import Tasnim-Enrollment database into `applicationPath/database`. If you wish you install sample data please upload `Tasnim-enrollment-sample-db.sql` other wise upload `Tasnim-enrollment-empty-db.sql`.
+1. Move/Upload Tessnim-Enrollment to the web directory of your choice.
+2. Create a new single MySQL database for Tessnim-Enrollment to store all its tables.
+3. Import Tessnim-Enrollment database into `applicationPath/database`. If you wish you install sample data please upload `Tessnim-enrollment-sample-db.sql` other wise upload `Tessnim-enrollment-empty-db.sql`.
 4. Go to` applicationPath/config` and rename file `db-sample.php` to `db.php`
 5. Edit the file `applicationPath/config/db.php` with real data, for example:
 
     ```php
     return [
      'class' => 'yii\db\Connection',
-     'dsn' => 'mysql:host=localhost;dbname=Tasnimdb',
+     'dsn' => 'mysql:host=localhost;dbname=Tessnimdb',
      'username' => 'root',
      'password' => '',
      'charset' => 'utf8',
     ];`
 	```
-6. Next, you will be redirected to welcome/login page. If you upload sample-database wii be redirect login page other wise redirect welcome page and then setting up Tasnim-Enrollment, creating an admin user account and institute setup etc.
-7. You are now ready to use Tasnim.
+6. Next, you will be redirected to welcome/login page. If you upload sample-database wii be redirect login page other wise redirect welcome page and then setting up Tessnim-Enrollment, creating an admin user account and institute setup etc.
+7. You are now ready to use Tessnim.
