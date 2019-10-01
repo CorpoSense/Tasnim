@@ -19,8 +19,8 @@ use kartik\widgets\DatePicker;
     'options' => ['placeholder' => Yii::t('app', 'Enter Start of the Semester') .' ...'],
     'pluginOptions' => [
         'autoclose'=>true,
-        'format' => Yii::$app->formatter->dateFormat
-        // 'format' => 'yyyy-mm-dd'
+        // 'format' => Yii::$app->formatter->dateFormat
+        'format' => 'yyyy-mm-dd'
     ]
 ]); ?>
 
@@ -28,8 +28,8 @@ use kartik\widgets\DatePicker;
     'options' => ['placeholder' => Yii::t('app', 'Enter End of the Semester') .' ...'],
     'pluginOptions' => [
         'autoclose'=>true,
-        'format' => Yii::$app->formatter->dateFormat
-        // 'format' => 'yyyy-mm-dd'
+        // 'format' => Yii::$app->formatter->dateFormat
+        'format' => 'yyyy-mm-dd'
     ]
 ]); ?>
 

@@ -18,7 +18,8 @@ use kartik\widgets\DatePicker;
     'options' => ['placeholder' => Yii::t('app', 'Enter Start of the School Year') .' ...'],
     'pluginOptions' => [
         'autoclose'=>true,
-        'format' => Yii::$app->formatter->dateFormat
+        'format' => Yii::$app->params['datePickerFormat']
+        // 'format' => Yii::$app->formatter->dateFormat
         // 'format' => 'yyyy-mm-dd'
     ]
 ]); ?>
@@ -27,7 +28,8 @@ use kartik\widgets\DatePicker;
 'options' => ['placeholder' => Yii::t('app', 'Enter End of the School Year') .' ...'],
 'pluginOptions' => [
     'autoclose'=>true,
-    'format' => Yii::$app->formatter->dateFormat
+    'format' => Yii::$app->params['datePickerFormat']
+    // 'format' => Yii::$app->formatter->dateFormat
     // 'format' => 'yyyy-mm-dd'
 ]
 ]); ?>
