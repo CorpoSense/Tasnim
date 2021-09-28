@@ -3,7 +3,8 @@
 $params = require(__DIR__ . '/params.php');
 
 $config = [
-    'id' => 'EduSec',
+    'id' => 'eQraa',
+    'name' => 'eQraa',
 	//'language' => 'gu',
     'basePath' => dirname(__DIR__),
     'bootstrap' => [

@@ -1,4 +1,4 @@
-<?php 
+<?php
 use \app\assets_b\AppAsset;
 use yii\helpers\Html;
 $this->off(\yii\web\View::EVENT_END_BODY, [\yii\debug\Module::getInstance(), 'renderToolbar']);
@@ -77,7 +77,7 @@ $directoryAsset = Yii::$app->assetManager->getPublishedUrl('@bower') . '/admin-l
 <head>
     <meta charset="<?= Yii::$app->charset ?>"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+
 <!--    <meta name="Keywords" content="edusec,edusec4,rudra softech,open source development in ahmedabad, college management software,college management system,education management software,school management system,school management software">
 	<meta name="Description" content="Software development company for open source technology in Ahmedabad. Provide Enterprise solution and quality services.">
 	<meta property="og:locale" content="en_US" />
@@ -99,19 +99,21 @@ $directoryAsset = Yii::$app->assetManager->getPublishedUrl('@bower') . '/admin-l
 
     <?= $content ?>
 
-<div class="login-footer"> 
-    <strong>Copyright &copy; <?= date('Y') ?> <a href="http://ximplexsoft.com">XimpleX Software</a>.</strong> All rights reserved.
+<div class="login-footer">
+    <strong>Copyright &copy; <?= date('Y') ?>
+      <a href="<?= Yii::$app->params['website'] ?>"><?= Yii::$app->name ?></a>.
+    </strong> <?= Yii::t('app', 'All rights reserved') ?>.
 </div>
 <?php $this->endBody() ?>
 </body>
 </html>
 <script>
 	$(function () {
-	$('input').iCheck({
-	  checkboxClass: 'icheckbox_square-blue',
-	  radioClass: 'iradio_square-blue',
-	  increaseArea: '20%' // optional
-	});
+  	$('input').iCheck({
+  	  checkboxClass: 'icheckbox_square-blue',
+  	  radioClass: 'iradio_square-blue',
+  	  increaseArea: '20%' // optional
+  	});
 	});
 </script>
 <?php $this->endPage() ?>

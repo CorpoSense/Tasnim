@@ -8,7 +8,7 @@ use yii\helpers\Html;
             [
                 'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
 				'homeLink'=>['label' => '<i class="fa fa-dashboard"></i> '.Yii::t('app', 'Home'), 'encode' => false, 'url'=>Yii::$app->homeUrl],
-        	
+
             ]
         ) ?>
 
@@ -22,10 +22,10 @@ use yii\helpers\Html;
         <div class="pull-right hidden-xs">
           <!--b>Version</b> 3.0 -->
         </div>
-        <strong><?= Yii::t('app', 'Copyright') ?> &copy; <?= date('Y') ?> <a href="http://ximplexsoft.com">XimpleX Software</a>.</strong> <?= Yii::t('app', 'All rights reserved') ?>.
+        <strong><?= Yii::t('app', 'Copyright') ?> &copy; <?= date('Y') ?>
+          <a href="<?= Yii::$app->params['website'] ?>"><?= Yii::$app->name ?></a>.</strong>
+          <?= Yii::t('app', 'All rights reserved') ?>.
       </div>
     </footer>
 
 </aside>
-
-

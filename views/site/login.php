@@ -1,7 +1,7 @@
 <?php
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-$this->title = Yii::t('app', 'Ximple Enrollment | Login');
+$this->title = Yii::$app->name.' | '.Yii::t('app', 'Login');
 ?>
 <div class="login-box">
       <div class="login-logo">
@@ -11,7 +11,7 @@ $this->title = Yii::t('app', 'Ximple Enrollment | Login');
 		<h1><?= Html::img(Yii::$app->request->baseUrl.'/images/logo.png', ['width'=>'150px;']) ?></h1>
       </div>
       <div class="login-box-body">
-  	
+
         <p class="login-box-msg"><?php echo Yii::t('app', 'Please fill out the following fields to login') ?></p>
 	<?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
           <div class="form-group has-feedback">
@@ -23,10 +23,10 @@ $this->title = Yii::t('app', 'Ximple Enrollment | Login');
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
           </div>
           <div class="row">
-            <div class="col-xs-7">    
+            <div class="col-xs-7">
               <div class="checkbox icheck">
 		<?= $form->field($model, 'rememberMe')->checkbox() ?>
-              </div>                        
+              </div>
             </div><!-- /.col -->
             <div class="col-xs-5">
 	      <?= Html::submitButton(Yii::t('app', 'Login'), ['class' => 'btn btn-primary btn-block btn-flat', 'name' => 'login-button']) ?>
@@ -44,12 +44,3 @@ $this->title = Yii::t('app', 'Ximple Enrollment | Login');
 	    </div>
        <?php endif; ?>
     </div><!-- /.login-box -->
-
- 
-
-
-
-
-
-
-

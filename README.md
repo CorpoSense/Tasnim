@@ -1,16 +1,16 @@
-# Tessnim - Enrollment System
+# eQraa - Enrollment System
 This is a fork from [Ximple Enrollment System](https://github.com/ximplextech/ximple-enrollment).
 
   This project was created to enhance the existing Edusec Enrollment System which opted to make their software cloud-based and was not movement for about a year.
 
 # INTRODUCTION
-  Tessnim Enrollment has a suite of selective modules specifically tailored to the requirements of education industry. Tessnim Enrollment is engineered and designed considering wide range of management functions within the university or school. With the use of Tessnim Enrollment, staff can be more accountable as it helps to know the performance of each department in just few seconds. Almost all departments within education industry (e. g. admission, administration, time table, etc) can be synchronized and accessed. Tessnim Enrollment helps to assign the responsibilities to employee staff and can reduce time wastage and can speed up the administrative functions. Core functions like admissions, students’ attendance in short entire range of university or school functions can be well performed by Tessnim Enrollment.
+  eQraa Enrollment has a suite of selective modules specifically tailored to the requirements of education industry. eQraa Enrollment is engineered and designed considering wide range of management functions within the university or school. With the use of eQraa Enrollment, staff can be more accountable as it helps to know the performance of each department in just few seconds. Almost all departments within education industry (e. g. admission, administration, time table, etc) can be synchronized and accessed. eQraa Enrollment helps to assign the responsibilities to employee staff and can reduce time wastage and can speed up the administrative functions. Core functions like admissions, students’ attendance in short entire range of university or school functions can be well performed by eQraa Enrollment.
 
 ## Purpose
-  Tessnim Enrollment will help school administration manage enrollment and automates some tedious manual process that comes along with it.
+  eQraa Enrollment will help school administration manage enrollment and automates some tedious manual process that comes along with it.
 
 ## Scope
-  Tessnim Enrollment will have College Management, Student Information, Employee Management, Course Management, Fees Management, Class Scheduling, Grades Management, and Online Payment.
+  eQraa Enrollment will have College Management, Student Information, Employee Management, Course Management, Fees Management, Class Scheduling, Grades Management, and Online Payment.
 
 # FEATURES
 - Student Information System
@@ -71,20 +71,20 @@ Generate reports pertaining to fees collections, late payments, special fees, ch
 # INSTALLATION
 
 
-1. Move/Upload Tessnim-Enrollment to the web directory of your choice.
-2. Create a new single MySQL database for Tessnim-Enrollment to store all its tables.
-3. Import Tessnim-Enrollment database into `applicationPath/database`. If you wish you install sample data please upload `Tessnim-enrollment-sample-db.sql` other wise upload `Tessnim-enrollment-empty-db.sql`.
+1. Move/Upload eQraa-Enrollment to the web directory of your choice.
+2. Create a new single MySQL database for eQraa-Enrollment to store all its tables.
+3. Import eQraa-Enrollment database into `applicationPath/database`. If you wish you install sample data please upload `eQraa-enrollment-sample-db.sql` other wise upload `eQraa-enrollment-empty-db.sql`.
 4. Go to` applicationPath/config` and rename file `db-sample.php` to `db.php`
 5. Edit the file `applicationPath/config/db.php` with real data, for example:
 
     ```php
     return [
      'class' => 'yii\db\Connection',
-     'dsn' => 'mysql:host=localhost;dbname=Tessnimdb',
+     'dsn' => 'mysql:host=localhost;dbname=eqraadb',
      'username' => 'root',
      'password' => '',
      'charset' => 'utf8',
     ];`
 	```
-6. Next, you will be redirected to welcome/login page. If you upload sample-database wii be redirect login page other wise redirect welcome page and then setting up Tessnim-Enrollment, creating an admin user account and institute setup etc.
-7. You are now ready to use Tessnim.
+6. Next, you will be redirected to welcome/login page. If you upload sample-database wii be redirect login page other wise redirect welcome page and then setting up eQraa-Enrollment, creating an admin user account and institute setup etc.
+7. You are now ready to use eQraa.
