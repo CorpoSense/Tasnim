@@ -2,23 +2,21 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
-$this->title = 'Welcome EduSec Application Installer';
+$this->title = 'Welcome eQraa Application Installer';
 ?>
 
 <div class="installation-box-body installation-header">
-	<h1>EduSec<sup style="top: -1.5em;font-size: 10px;">TM</sup> Installation</h1>
+	<h1>eQraa<sup style="top: -1.5em;font-size: 10px;">TM</sup> Installation</h1>
 </div>
 <div class="installation-box-body">
 	<?php $form = ActiveForm::begin(); ?>
 	<h3>License Agreement</h3>
 <pre style="height: 200px;overflow-y: scroll;">
 
-EduSec<sup>TM</sup> - School/College Management System
-	
-Developed by RudraSoftech
-    
-Copyright (C) 2015 Rudra Softech <a href="http://rudrasoftech.com/" target="_blank">(http://rudrasoftech.com)</a>
-	
+eQraa<sup>TM</sup> - School/College Management System
+
+Copyright (C) 2015
+
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
@@ -30,7 +28,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with this program.  If not, see <a href="http://www.gnu.org/licenses/" target="_blank">http://www.gnu.org/licenses</a>. 
+along with this program.  If not, see <a href="http://www.gnu.org/licenses/" target="_blank">http://www.gnu.org/licenses</a>.
 </pre>
 
 	<?= $form->field($model, 'is_agree')->checkbox(); ?>

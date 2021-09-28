@@ -1,5 +1,5 @@
-<?php 
-use yii\helpers\Html; 
+<?php
+use yii\helpers\Html;
 use yii\helpers\Url;
 $this->title = Yii::t('dash', 'Dashboard Modules');
 $this->params['breadcrumbs'][] = $this->title;
@@ -37,7 +37,7 @@ $this->registerCss(".popover{max-width:500px}");
 		      </div><!-- /.info-box -->
 		</div>
 
-	</div> <!-- /. End Row-->	
+	</div> <!-- /. End Row-->
 
 </div><!-- /.box-body -->
 </div>
@@ -49,7 +49,7 @@ $this->registerCss(".popover{max-width:500px}");
 		<h3 class="box-title"><i class="ion ion-calendar"></i> <?php echo Yii::t('dash', 'Manage Event Schedule') ?></h3>
 	</div>
 	<div class="box-body">
-<?php 
+<?php
 $AEurl = Url::to(["events/add-event"]);
 $UEurl = Url::to(["events/update-event"]);
 $AddEvent = Yii::t('dash', 'Add Event');
@@ -95,7 +95,7 @@ $eEnd = Yii::t('app', 'End Time');
 $JsF = <<<EOF
 		function (event, element) {
 			var start_time = moment(event.start).format("DD-MM-YYYY, h:mm:ss a");
-		    	var end_time = moment(event.end).format("DD-MM-YYYY, h:mm:ss a");
+		  var end_time = moment(event.end).format("DD-MM-YYYY, h:mm:ss a");
 
 			element.popover({
 		            title: event.title,
@@ -149,7 +149,7 @@ EOF;
 	</ul>
      </div>
    </div>
- 
+
 </div><!-- /.box-body -->
 </div>
 <!---End Event manager block--->
@@ -160,5 +160,5 @@ EOF;
 		'header' => "<h3>".Yii::t('dash', 'Add Event')."</h3>",
 	]);
 
-	yii\bootstrap\Modal::end(); 
+	yii\bootstrap\Modal::end();
 ?>

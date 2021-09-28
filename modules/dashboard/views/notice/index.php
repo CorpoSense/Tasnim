@@ -11,7 +11,6 @@ $this->title = Yii::t('dash', 'Notice List');
 $this->params['breadcrumbs'][] = ['label' => Yii::t('dash', 'Dashboard'), 'url' => ['default/index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-
 <div class="col-xs-12">
   <div class="col-lg-8 col-sm-8 col-xs-12 no-padding edusecArLangCss"><h3 class="box-title"><i class="fa fa-th-list"></i> <?php echo Yii::t('dash', 'Notice List') ?></h3></div>
   <div class="col-lg-4 col-sm-4 col-xs-12 no-padding" style="padding-top: 20px !important;">
@@ -44,13 +43,13 @@ $this->params['breadcrumbs'][] = $this->title;
 
 		   // 'notice_id',
 		    'notice_title',
-		    'notice_description',		
+		    'notice_description',
 		    [
 			'attribute' => 'notice_user_type',
 			'value' => function ($model) {
-						return (($model->notice_user_type == 'S') ? 'Student' : (($model->notice_user_type == 'E') ? "Employee" : "General" )); 
+						return (($model->notice_user_type == 'S') ? 'Student' : (($model->notice_user_type == 'E') ? "Employee" : "General" ));
 					},
-			'filter' => ['S' => 'Student', 'E' => 'Employee', '0' => 'General'],
+			'filter' => ['S' => Yii::t('app', 'Student'), 'E' => Yii::t('app', 'Employee'), '0' => Yii::t('app', 'General')],
 		   ],
 		   [
 			'attribute' => 'notice_date',
@@ -61,19 +60,19 @@ $this->params['breadcrumbs'][] = $this->title;
 		            'model'=>$searchModel,
 		            'attribute'=>'notice_date',
 		            'clientOptions' =>[
-		                'dateFormat' => 'dd-mm-yyyy',
+		                // 'dateFormat' => Yii::$app->params['datePickerFormat'], //'dd-mm-yyyy',
 		                'changeMonth'=> true,
 		                'changeYear'=> true,
-				'defaultValue'=>null,
-				'defaultDate'=> null,
-				'yearRange'=>'1900:'.(date('Y')+1)],
-			     'options'=>[
-				'id' => 'notice_date',
+                    'defaultValue'=>null,
+                    'defaultDate'=> null,
+                    'yearRange'=>'1900:'.(date('Y')+1)],
+      			     'options'=>[
+            				'id' => 'notice_date',
 		                'value' => NULL,
-				'class' => 'form-control'
-		              ],
+            				'class' => 'form-control'
+      		        ],
 		        ]),
-			'format' => 'html',	
+			'format' => 'html',
 		    ],
 		    [
 				'class' => '\pheme\grid\ToggleColumn',

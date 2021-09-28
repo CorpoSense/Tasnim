@@ -23,7 +23,7 @@ use yii\web\NotFoundHttpException;
 		$Photo = $empInfo->getEmpPhoto($empInfo->emp_photo);
 	}
 	else {
-		$Photo = Yii::getAlias('@web').'/data/emp_images/no-photo.png'; 
+		$Photo = Yii::getAlias('@web').'/data/emp_images/no-photo.png';
 	}
    ?>
 <aside class="left-side sidebar-offcanvas">
@@ -41,7 +41,7 @@ use yii\web\NotFoundHttpException;
             </div>
         <?php endif; ?>
 
-        <!-- sidebar-menu. -- Start -->
+        <!-- sidebar-menu. --><!-- Start -->
 
         <ul class="sidebar-menu">
             <li>
@@ -53,15 +53,15 @@ use yii\web\NotFoundHttpException;
 
 	    if($this->context->module->id == 'student')
 		 echo $this->render('menu/student');
-	    else if($this->context->module->id == 'employee') 
+	    else if($this->context->module->id == 'employee')
 	    	 echo $this->render('menu/employee');
-	    else if($this->context->module->id == 'course') 
+	    else if($this->context->module->id == 'course')
 	    	 echo $this->render('menu/course');
-	    else if($this->context->module->id == 'fees') 
+	    else if($this->context->module->id == 'fees')
 	    	 echo $this->render('menu/fees');
-	    else if($this->context->module->id == 'admission') 
+	    else if($this->context->module->id == 'admission')
 	    	 echo $this->render('menu/admission');
-	    else if($this->context->module->id == 'report' || get_class($this->context) == 'app\controllers\LoginDetailsController') 
+	    else if($this->context->module->id == 'report' || get_class($this->context) == 'app\controllers\LoginDetailsController')
 	    	 echo $this->render('menu/report');
 	    else if ($this->context->module->id == 'dashboard')
 	         echo $this->render('menu/dashboard');
@@ -78,7 +78,7 @@ use yii\web\NotFoundHttpException;
 	?>
         </ul>
 
-	<!-- sidebar-menu. -- End -->
+	<!-- sidebar-menu. --><!-- End -->
 
     </section>
 

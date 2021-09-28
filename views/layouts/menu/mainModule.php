@@ -54,7 +54,7 @@ use yii\helpers\Html;
             </li>
 	<?php if(Yii::$app->user->can('Configuration')) { ?>
 	    <li><?= Html::a('<i class="fa fa-cogs"></i> <span>'.Yii::t('app', 'Configuration').'</span>', ['/default/index']); ?></li>
-	<?php } 
+	<?php }
 	      if(Yii::$app->user->can('/dashboard/default/index')) {
 	?>
 	    <li><?= Html::a('<i class="fa fa-dashboard"></i> <span>'.Yii::t('dash', 'Dashboard').'</span>', ['/dashboard/default/index']); ?></li>
@@ -85,7 +85,7 @@ use yii\helpers\Html;
 	<?php } ?>
         </ul>
 
-	<!-- sidebar-menu. -- End -->
+	<!-- sidebar-menu. --> <!-- End -->
 
     </section>
 

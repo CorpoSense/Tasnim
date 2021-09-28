@@ -41,14 +41,14 @@ $this->params['breadcrumbs'][] = $this->title;
 		'summary'=>'',
 		'columns' => [
 		    ['class' => 'yii\grid\SerialColumn'],
-		  
+
 		    'msg_details',
 		    [
 			'attribute' => 'msg_user_type',
 			'value' => function ($model) {
-						return (($model->msg_user_type == 'S') ? 'Student' : (($model->msg_user_type == 'E') ? "Employee" : "General" )); 
+						return (($model->msg_user_type == 'S') ? 'Student' : (($model->msg_user_type == 'E') ? "Employee" : "General" ));
 					},
-			'filter' => ['S' => 'Student', 'E' => 'Employee', '0' => 'General'],
+			'filter' => ['S' => Yii::t('app', 'Student'), 'E' => Yii::t('app', 'Employee'), '0' => Yii::t('app', 'General')],
 		   ],
 		   [
 				'class' => '\pheme\grid\ToggleColumn',
@@ -59,7 +59,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
 		   ['class' => 'app\components\CustomActionColumn'],
 		],
-	    ]); 
+	    ]);
 	   Pjax::end();
 	  ?>
 	</div>

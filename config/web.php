@@ -99,17 +99,24 @@ $config = [
 		    ],
 		],
   		'formatter' => [
-  			'dateFormat' => 'dd-mm-yyyy',
+  			// 'dateFormat' => 'dd/MM/yyyy', // disabled to use 'system' or use Yii::$app->params['datePickerFormat']
   			'datetimeFormat' => 'php:d-m-Y H:i:s',
   			'timeFormat' => 'php:H:i:s',
   			'decimalSeparator' => ',',
   			'thousandSeparator' => ' ',
-  			'currencyCode' => 'USD',
+  			// 'currencyCode' => 'USD',
+  			'currencyCode' => 'DZD',
+        'locale' => 'ar-DZ',
         // 'locale' => 'de-DE', //your language locale
+
+        // Starting from Yii 2.0.7 you can calendar to be used for date formatting (see: https://www.yiiframework.com/doc/api/2.0/yii-i18n-formatter#$calendar-detail)
+        // 'locale' => 'fa_IR@calendar=persian',
+        // 'calendar' => \IntlDateFormatter::TRADITIONAL,
+
         // 'defaultTimeZone' => 'Europe/Berlin', // time zone
   			'class' => 'yii\i18n\Formatter',
   		],
-        	'db' => require(__DIR__ . '/db.php'),
+      'db' => require(__DIR__ . '/db.php'),
     ],
 
 	'as access' => [
@@ -121,12 +128,12 @@ $config = [
 	],
     'params' => $params,
     'modules' => [
-	'course' => 'app\modules\course\CourseModule',
-	'student' => 'app\modules\student\StudentModule',
-	'employee' => 'app\modules\employee\EmployeeModule',
-	'fees' => 'app\modules\fees\FeesModule',
-	'report' => 'app\modules\report\Report',
-	'dashboard' => 'app\modules\dashboard\DashboardModule',
+      	'course' => 'app\modules\course\CourseModule',
+      	'student' => 'app\modules\student\StudentModule',
+      	'employee' => 'app\modules\employee\EmployeeModule',
+      	'fees' => 'app\modules\fees\FeesModule',
+      	'report' => 'app\modules\report\Report',
+      	'dashboard' => 'app\modules\dashboard\DashboardModule',
         'building' => [
             'class' => 'app\modules\building\BuildingModule',
         ],
@@ -145,16 +152,16 @@ $config = [
         'classschedule' => [
             'class' => 'app\modules\classschedule\ClassScheduleModule',
         ],
-	'rights' => [
-        'class' => 'mdm\admin\Module',
-	    'controllerMap' => [
-                 'assignment' => [
-                    'class' => 'mdm\admin\controllers\AssignmentController',
-                    'userClassName' => 'app\models\User',
-                    'idField' => 'user_id', // id field of model User
-		    'usernameField' => 'user_login_id', // username field of model User
-                ],
-            ],
+        'rights' => [
+          'class' => 'mdm\admin\Module',
+          'controllerMap' => [
+                   'assignment' => [
+                      'class' => 'mdm\admin\controllers\AssignmentController',
+                      'userClassName' => 'app\models\User',
+                      'idField' => 'user_id', // id field of model User
+                      'usernameField' => 'user_login_id', // username field of model User
+                  ],
+              ],
         ],
     ],
 ];

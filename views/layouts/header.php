@@ -10,8 +10,6 @@ use yii\web\NotFoundHttpException;
 
 AppAsset::register($this);
 
-Yii::$app->name = "Ximple Enrollment";
-
 if(Yii::$app->language == 'ar') :
 	$this->registerCss('
 .navbar-right:last-child {
@@ -26,7 +24,7 @@ endif;
 
 <header class="main-header header<?php // (Yii::$app->language == 'ar' ? 'main-header' : 'header')?>">
 
-<?= Html::a(Html::img(Yii::$app->request->baseUrl.'/images/logo.png', ['width'=>'120px;', 'height'=>'42px']), Yii::$app->homeUrl, ['class' => 'logo', /*'style' => ((\Yii::$app->language == 'ar') ? 'padding: 14px 50px !important;' : '')*/]) ?>
+<?= Html::a(Html::img(Yii::$app->request->baseUrl.'/images/logo.png', ['width'=>'68px;', 'height'=>'50px']), Yii::$app->homeUrl, ['class' => 'logo', /*'style' => ((\Yii::$app->language == 'ar') ? 'padding: 14px 50px !important;' : '')*/]) ?>
 
 <nav class="navbar navbar-static-top" role="navigation">
 
@@ -92,7 +90,7 @@ $notifyCount = ($countT + count($eventsList));
         <li>
             <!-- inner menu: contains the actual data -->
             <ul class="menu">
-		<?php 
+		<?php
 		    if(!Yii::$app->session->get('stu_id') && !Yii::$app->session->get('emp_id')) :
 		      if(!empty($empList)) { ?>
                 <li>
@@ -121,7 +119,7 @@ $notifyCount = ($countT + count($eventsList));
                         <i class="fa fa-info success"></i><strong> <?= Html::encode($events); ?> <?= Yii::t('app', 'event(s) created today') ?> </strong>
                     </a>
                 </li>
-		<?php } 
+		<?php }
 		     endif;
 		?>
 		<?php if(!empty($eventsList)) {

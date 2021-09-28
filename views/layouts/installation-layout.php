@@ -18,12 +18,12 @@ $directoryAsset = Yii::$app->assetManager->getPublishedUrl('@bower') . '/admin-l
 <meta charset="<?= Yii::$app->charset ?>"/>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<meta name="Keywords" content="edusec,edusec4,rudra softech,open source development in ahmedabad, college management software,college management system,education management software,school management system,school management software">
+<!-- <meta name="Keywords" content="edusec,edusec4,rudra softech,open source development in ahmedabad, college management software,college management system,education management software,school management system,school management software">
 <meta name="Description" content="Software development company for open source technology in Ahmedabad. Provide Enterprise solution and quality services.">
 <meta property="og:locale" content="en_US" />
 <meta property="og:title" content="Rudra Softech - Provide Enterprise Solution | Development on open source technology | College Management Software | School Management Software" />
 <meta property="og:description" content="Core functions like admissions, library management, transport management, students attendance in short entire range of university functions can be well performed by EduSec" />
-<meta property="og:image" content="http://www.rudrasoftech.com/rudra.png">
+<meta property="og:image" content="http://www.rudrasoftech.com/rudra.png"> -->
 
 	<link rel="shortcut icon" href="<?php echo Yii::$app->request->baseUrl; ?>/images/icon.png" type="image/x-icon" />
 <?= Html::csrfMetaTags() ?>
@@ -37,11 +37,10 @@ $directoryAsset = Yii::$app->assetManager->getPublishedUrl('@bower') . '/admin-l
 	<?= $content ?>
 </div><!-- /.installation-box -->
 
-<div class="installation-footer"> 
+<div class="installation-footer">
 	<strong>Copyright &copy; <?= date('Y') ?> <a href="http://www.rudrasoftech.com">Rudra Softech</a>.</strong> All rights reserved.
 </div>
 <?php $this->endBody() ?>
 </body>
 </html>
 <?php $this->endPage() ?>
-

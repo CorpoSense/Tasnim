@@ -28,7 +28,7 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'notice_title')->textInput(['maxlength' => 25, 'placeholder' => Yii::t('dash', 'Enter Title'), 'title' => 'Title']) ?>
 
     <?= $form->field($model, 'notice_description')->textArea(['maxlength' => 255, 'placeholder' => Yii::t('dash', 'Enter Description')]) ?>
-    
+
     <?= $form->field($model, 'notice_user_type')
                         ->radioList( ["S" => Yii::t('dash', 'Student'), "E" => Yii::t('dash', 'Employee'), '0' => Yii::t('dash', 'General')],
                             [ 'item' => function($index, $label, $name, $checked, $value) {
@@ -43,7 +43,7 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'notice_date')->widget(yii\jui\DatePicker::className(),
                     [
                       'clientOptions' => [
-                          'dateFormat' => 'dd-mm-yyyy',
+                          // 'dateFormat' => Yii::$app->params['datePickerFormat'], //'dd-MM-yyyy',
                           'changeMonth' => true,
                           'changeYear' => true,
                           'autoSize' => true ],

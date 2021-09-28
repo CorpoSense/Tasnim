@@ -91,24 +91,30 @@ EOF;
 	$JsF = <<<EOF
 		function (event, element) {
 			var start_time = moment(event.start).format("DD-MM-YYYY, h:mm:ss a");
-		    	var end_time = moment(event.end).format("DD-MM-YYYY, h:mm:ss a");
+    	var end_time = moment(event.end).format("DD-MM-YYYY, h:mm:ss a");
 
 			element.popover({
 		            title: event.title,
 		            placement: 'top',
 		            html: true,
-			    global_close: true,
-			    container: 'body',
-			    trigger: 'hover',
-			    delay: {"show": 500},
-		            content: "<table class='table'><tr><th> {$eDetail} : </th><td>" + event.description + " </td></tr><tr><th> {$eType} : </th><td>" + event.event_type + "</td></tr><tr><th> {$eStart} : </t><td>" + start_time + "</td></tr><tr><th> {$eEnd} : </th><td>" + end_time + "</td></tr></table>"
-        		});
+                global_close: true,
+                container: 'body',
+                trigger: 'hover',
+                delay: {"show": 500},
+                content: "<table class='table'><tr><th> {$eDetail} : </th><td>" +
+                  event.description + " </td></tr><tr><th> {$eType} : </th><td>" +
+                  event.event_type + "</td></tr><tr><th> {$eStart} : </t><td>" +
+                  start_time + "</td></tr><tr><th> {$eEnd} : </th><td>" +
+                  end_time + "</td></tr></table>"
+              });
                }
 EOF;
     ?>
 
     <?= \yii2fullcalendar\yii2fullcalendar::widget([
-			'options' => ['language' => 'en'],
+			'options' => [
+        'language' => Yii::$app->language // 'en'
+      ],
 			'clientOptions' => [
 				'fixedWeekCount' => false,
 				'weekNumbers'=>true,
@@ -159,14 +165,16 @@ EOF;
 .popover{
     max-width:450px;
 }
+.legend {
+  margin: 15px;
+}
 </style>
 <?php
 	yii\bootstrap\Modal::begin([
 		'id' => 'eventModal',
-		//'header' => "<div class='row'><div class='col-xs-6'><h3>Add Event</h3></div><div class='col-xs-6'>".Html::a('Delete', ['#'], ['class' => 'btn btn-danger pull-right', 'style' => 'margin-top:5px'])."</div></div>",
+		// 'header' => "<div class='row'><div class='col-xs-6'><h3>Add Event</h3></div><div class='col-xs-6'>".Html::a('Delete', ['#'], ['class' => 'btn btn-danger pull-right', 'style' => 'margin-top:5px'])."</div></div>",
 		'header' => "<h3>".Yii::t('dash', 'Add Event')."</h3>",
 	]);
 
 	yii\bootstrap\Modal::end();
 ?>
-  
