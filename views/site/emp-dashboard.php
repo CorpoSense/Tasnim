@@ -310,10 +310,10 @@ EOF;
                 <ul class="nav nav-tabs pull-right">
                     <li><a href="#birth-upcoming" data-toggle="tab"><?php echo Yii::t('app', 'Upcoming') ?></a></li>
 		    <li class="active"><a href="#birth-taday" data-toggle="tab"><?php echo Yii::t('app', "Today's") ?></a></li>
-                    <li class="pull-left header" style="<?= (Yii::$app->language == 'ar') ? 'left:26%' : ''; ?>"><i class="fa fa-birthday-cake"></i> <?php echo Yii::t('app', 'Birthdays') ?></li>
+                    <li class="pull-left header" style="<?= (Yii::$app->language == 'ar') ? 'left:26%' : ''; ?>"><i class="fa fa-birthday-cake"></i> <?php echo Yii::t('app', 'Special Days') ?></li>
                 </ul>
                 <div class="tab-content">
-                    <!-- Birthdays -->
+                    <!-- Special Days -->
 		    <div class="tab-pane active" id="birth-taday">
 			<?php $empList = app\modules\employee\models\EmpInfo::find()->where(["LIKE", "emp_dob", date('m-d')])->all();
 			if(!empty($empList)) {
@@ -331,7 +331,7 @@ EOF;
 				<?php endforeach;
 			} else {
 				echo '<div class="box-header bg-warning"><div style="padding:5px">';
-				echo Yii::t('app', 'No Birthday Today');
+				echo Yii::t('app', 'No special day today');
 				echo '</div></div>';
 			}
 			?>
@@ -354,7 +354,7 @@ EOF;
 				<?php endforeach;
 			} else {
 				echo '<div class="box-header bg-warning"><div style="padding:5px">';
-				echo Yii::t('app', 'No Birthday within 30 days duration');
+				echo Yii::t('app', 'No special day within 30 days duration');
 				echo '</div></div>';
 			}
 			?>

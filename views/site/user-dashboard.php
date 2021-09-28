@@ -1,8 +1,8 @@
-<?php 
+<?php
 use yii\helpers\Html;
 use yii\helpers\Url;
 
-$this->title = Yii::t('app', 'Admin Dashboard'); 
+$this->title = Yii::t('app', 'Admin Dashboard');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <script>
@@ -25,7 +25,7 @@ $(document).ready(function(){
     background: none;
 }
 .popover{
-    max-width:450px;   
+    max-width:450px;
 }
 </style>
 
@@ -43,7 +43,7 @@ $this->registerJs(
 "$('body').on('click', function (e) {
     $('[data-toggle=\"popover\"]').each(function () {
         if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover').has(e.target).length === 0) {
-            $(this).popover('hide'); 
+            $(this).popover('hide');
         }
     });
 });"
@@ -159,21 +159,21 @@ $this->registerJs(
                                 <div class="tab-content">
                                     <!-- Notice -->
                                     <div class="tab-pane active" id="all-notice">
-					
+
 					<?php $noticeList = app\modules\dashboard\models\Notice::find()->where("is_status = 0 AND notice_user_type = '0'")->all();
 
 				    if(!empty($noticeList)) {
 					foreach($noticeList as $nl) :
 					?>
 					<div class="notice-main bg-light-blue">
-						<div class="notice-disp-date">				        		<small class="label label-success"><i class="fa fa-calendar"></i> <?= (!empty($nl->notice_date) ? Yii::$app->formatter->asDate($nl->notice_date) : "Not Set"); ?></small>	
+						<div class="notice-disp-date">				        		<small class="label label-success"><i class="fa fa-calendar"></i> <?= (!empty($nl->notice_date) ? Yii::$app->formatter->asDate($nl->notice_date) : "Not Set"); ?></small>
 						</div>
 						<div class="notice-body">
 							 <div class="notice-title"><?= Html::a($nl->notice_title, '#', ['style' => 'color:#FFF', 'class'=>'noticeModalLink', 'data-value'=>Url::to(['dashboard/notice/view-popup','id'=>$nl->notice_id])]); ?>&nbsp; </div>
 							 <div class="notice-desc"><?= $nl->notice_description; ?> </div>
-						</div>					          
+						</div>
 					</div>
-					<?php endforeach; 
+					<?php endforeach;
 				     } else {
 						echo '<div class="box-header bg-warning"><div style="padding:5px">';
 						echo Yii::t('app', 'No Notice....');
@@ -182,19 +182,19 @@ $this->registerJs(
 					?>
 				    </div>
                                     <div class="tab-pane" id="stu-notice">
-					
+
 					<?php $noticeList = app\modules\dashboard\models\Notice::find()->where("is_status = 0 AND notice_user_type = 'S'")->all();
 
 				    if(!empty($noticeList)) {
 					foreach($noticeList as $nl) :
 					?>
 					 <div class="notice-main bg-aqua">
-						<div class="notice-disp-date">				        		<small class="label label-success"><i class="fa fa-calendar"></i> <?= (!empty($nl->notice_date) ? Yii::$app->formatter->asDate($nl->notice_date) : "Not Set"); ?></small>	
+						<div class="notice-disp-date">				        		<small class="label label-success"><i class="fa fa-calendar"></i> <?= (!empty($nl->notice_date) ? Yii::$app->formatter->asDate($nl->notice_date) : "Not Set"); ?></small>
 						</div>
 						<div class="notice-body">
 							 <div class="notice-title"><?= Html::a($nl->notice_title, '#', ['style' => 'color:#FFF', 'class'=>'noticeModalLink', 'data-value'=>Url::to(['dashboard/notice/view-popup','id'=>$nl->notice_id])]); ?>&nbsp; </div>
 							 <div class="notice-desc"><?= $nl->notice_description; ?> </div>
-						</div>					          
+						</div>
 					</div>
 					<?php endforeach;
 				      } else {
@@ -205,19 +205,19 @@ $this->registerJs(
 					?>
 				    </div>
 				    <div class="tab-pane" id="emp-notice">
-					
+
 					<?php $noticeList = app\modules\dashboard\models\Notice::find()->where("is_status = 0 AND notice_user_type = 'E'")->all();
 
 				    if(!empty($noticeList)) {
 					foreach($noticeList as $nl) :
 					?>
 					 <div class="notice-main bg-teal">
-						<div class="notice-disp-date">	<small class="label label-success"><i class="fa fa-calendar"></i> <?= (!empty($nl->notice_date) ? Yii::$app->formatter->asDate($nl->notice_date) : "Not Set"); ?></small>	
+						<div class="notice-disp-date">	<small class="label label-success"><i class="fa fa-calendar"></i> <?= (!empty($nl->notice_date) ? Yii::$app->formatter->asDate($nl->notice_date) : "Not Set"); ?></small>
 						</div>
 						<div class="notice-body">
 							 <div class="notice-title"><?= Html::a($nl->notice_title, '#', ['style' => 'color:#FFF', 'class'=>'noticeModalLink', 'data-value'=>Url::to(['dashboard/notice/view-popup','id'=>$nl->notice_id])]); ?>&nbsp; </div>
 							 <div class="notice-desc"><?= $nl->notice_description; ?> </div>
-						</div>					          
+						</div>
 					</div>
 					<?php endforeach;
 				      } else {
@@ -281,7 +281,7 @@ EOF;
 						'eventClick' => new \yii\web\JsExpression($JSEventClick),
 						'eventRender' => new \yii\web\JsExpression($JsF),
 						'contentHeight' => 380,
-						'timeFormat' => 'hh(:mm) A', 
+						'timeFormat' => 'hh(:mm) A',
 					],
 					'ajaxEvents' => yii\helpers\Url::toRoute(['/dashboard/events/view-events'])
 				]);
@@ -306,10 +306,10 @@ EOF;
                                 <ul class="nav nav-tabs pull-right">
                                     <li><a href="#birth-upcoming" data-toggle="tab"><?php echo Yii::t('app', 'Upcoming') ?></a></li>
 				    <li class="active"><a href="#birth-taday" data-toggle="tab"><?php echo Yii::t('app', "Today's") ?></a></li>
-                                    <li class="pull-left header" style="<?= (Yii::$app->language == 'ar') ? 'left:26%' : ''; ?>"><i class="fa fa-birthday-cake"></i><?php echo Yii::t('app', 'Birthdays') ?></li>
+                                    <li class="pull-left header" style="<?= (Yii::$app->language == 'ar') ? 'left:26%' : ''; ?>"><i class="fa fa-birthday-cake"></i><?php echo Yii::t('app', 'Special Days') ?></li>
                                 </ul>
                                 <div class="tab-content">
-                                    <!-- Birthdays -->
+                                    <!-- Special Days -->
 				    <div class="tab-pane active" id="birth-taday">
 					<?php $empList = app\modules\employee\models\EmpInfo::find()->where(["LIKE", "emp_dob", date('m-d')])->all();
 					if(!empty($empList)) {
@@ -324,17 +324,17 @@ EOF;
 							<small class="label label-success"><i class="fa fa-calendar"></i> <?php echo date('d M',strtotime($el->emp_dob)); ?></small></h3>
 							</div>
 						    </div><!-- /.box -->
-						<?php endforeach; 
+						<?php endforeach;
 					} else {
 						echo '<div class="box-header bg-warning"><div style="padding:5px">';
-						echo Yii::t('app', 'No Birthday Today');
+						echo Yii::t('app', 'No special day today');
 						echo '</div></div>';
 					}
 					?>
 				    </div>
                                     <div class="tab-pane" id="birth-upcoming">
 					<?php $empLi = "SELECT * FROM  emp_info WHERE  DATE_ADD(emp_dob, INTERVAL YEAR(CURDATE())-YEAR(emp_dob) + IF(DAYOFYEAR(CURDATE()) > DAYOFYEAR(emp_dob),1,0) YEAR) BETWEEN CURDATE()+1 AND DATE_ADD(CURDATE(), INTERVAL 30 DAY)";
-					$empList = app\modules\employee\models\EmpInfo::findBySql($empLi)->all(); 
+					$empList = app\modules\employee\models\EmpInfo::findBySql($empLi)->all();
 					if(!empty($empList)) {
 						foreach($empList as $el) :
 						?>
@@ -347,10 +347,10 @@ EOF;
 							    <small class="label label-warning"><i class="fa fa-calendar"></i> <?php echo date('d M',strtotime($el->emp_dob)); ?></small></h3>
 							</div>
 						    </div><!-- /.box -->
-						<?php endforeach; 
+						<?php endforeach;
 					} else {
 						echo '<div class="box-header bg-warning"><div style="padding:5px">';
-						echo Yii::t('app', 'No Birthday within 30 days duration');
+						echo Yii::t('app', 'No special day within 30 days duration');
 						echo '</div></div>';
 					}
 					?>
@@ -365,8 +365,8 @@ EOF;
                                 </div><!-- /.box-header -->
                                 <div class="box-body">
                                     <ul class="todo-list" id="coursList">
-				     <?php 
-					$courseList = app\modules\course\models\Courses::find()->where(['is_status' => 0])->all(); 
+				     <?php
+					$courseList = app\modules\course\models\Courses::find()->where(['is_status' => 0])->all();
 					foreach($courseList as $cl) :
 				     ?>
                                         <li>
@@ -387,4 +387,3 @@ EOF;
                     </div><!-- /.row (main row) -->
 
                 </section><!-- /.content -->
-
