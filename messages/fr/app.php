@@ -301,7 +301,7 @@ return [
 		'Semester ID' => 'ID de semestre',
 		'Semester Name' => 'Nom du semestre',
 		'Start Date' => 'Date de début',
-		'End Date' => 'Date de fin'',
+		'End Date' => 'Date de fin',
 		'School Year ID' => 'ID de l\'année scolaire',
 		'School Years' => 'Années scolaires',
 		'School Year Alias' => 'Alias de l\'année scolaire',
