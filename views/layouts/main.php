@@ -27,7 +27,7 @@ if (Yii::$app->controller->action->id === 'login') {
     <head>
         <meta charset="<?= Yii::$app->charset ?>"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        
+
 <!--        <meta name="Keywords" content="edusec,edusec4,rudra softech,open source development in ahmedabad, college management software,college management system,education management software,school management system,school management software">
 		<meta name="Description" content="Software development company for open source technology in Ahmedabad. Provide Enterprise solution and quality services.">
 		<meta property="og:locale" content="en_US" />
@@ -41,6 +41,14 @@ if (Yii::$app->controller->action->id === 'login') {
 
         <?= Html::csrfMetaTags() ?>
         <title><?= Html::encode($this->title) ?></title>
+
+				<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		    <!--[if lt IE 9]>
+		    <script src="/js/html5shiv.js"></script>
+		    <script src="/js/respond.min.js"></script>
+		    <![endif]-->
+
         <?php $this->head() ?>
     </head>
     <body class="skin-black">
@@ -53,12 +61,12 @@ if (Yii::$app->controller->action->id === 'login') {
       <div class="wrapper row-offcanvas row-offcanvas-left">
 
         <?= $this->render('left.php', ['directoryAsset' => $directoryAsset]) ?>
-	
+
         <?= $this->render(
             'content.php',
             ['content' => $content, 'directoryAsset' => $directoryAsset]
         ) ?>
-	
+
       </div>
     <?php $this->endBody() ?>
     </body>
