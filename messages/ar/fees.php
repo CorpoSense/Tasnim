@@ -95,7 +95,7 @@ return [
     'No fees results found.' => 'لم يتم العثور على نتائج بخصوص الرسوم',
     'No results found.' => 'لم يتم العثور على نتائج',
     'No student data available' => 'لم يتم العثور على بيانات الطالب',
-    'Paid Amount' => 'المبلغ المدفع',
+    'Paid Amount' => 'المبلغ المدفوع',
     'Paid/Unpaid' => 'مدفوع / غير مدفوع',
     'Paid/Unpaid Amount' => 'مبالغ مدفوعة/غير مدفوعة',
     'Partial Payment Fees Receipt' => 'فاتورة دفع جزئي للرسوم',
@@ -149,4 +149,5 @@ return [
     'Updated By' => 'بمعرفة',
     'View Bank' => 'إظهار بيانات البنك',
     'View Fees Collect Category' => 'إظهار فئات التحصيل',
+    'Fees Amount' => 'مبلغ الرسوم',
 ];

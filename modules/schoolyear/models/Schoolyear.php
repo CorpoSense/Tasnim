@@ -51,8 +51,8 @@ class Schoolyear extends \yii\db\ActiveRecord
     {
         return [
             'school_year_id' => Yii::t('app', 'School Year ID'),
-            'start' => Yii::t('app', 'Start'),
-            'end' => Yii::t('app', 'End'),
+            'start' => Yii::t('app', 'Start Date'),
+            'end' => Yii::t('app', 'End Date'),
             'school_year_alias' => Yii::t('app', 'School Year Alias'),
             'created_at' => Yii::t('app', 'Created At'),
             'created_by' => Yii::t('app', 'Created By'),

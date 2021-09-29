@@ -8,6 +8,7 @@ use yii\grid\GridView;
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = Yii::t('app', 'School Years');
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Configuration'), 'url' => ['/default/index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="schoolyear-index">
@@ -16,7 +17,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a(Yii::t('app', 'Create School Year'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Yii::t('app', 'Create'). ' '.Yii::t('app', 'School Year'), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
     <?php $visible = Yii::$app->user->can("/schoolyear/*") ? true : false; ?>
     <?php
@@ -51,7 +52,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'contentOptions' => ['class' => 'text-center'],
                 'attribute' => 'is_status',
                 'enableAjax' => true,
-                'filter' => ['0' => 'Active', '1' => 'Inactive']
+                'filter' => ['0' => Yii::t('app', 'Active'), '1' => Yii::t('app', 'Inactive')]
             ],
             //'created_at',
             // 'created_by',

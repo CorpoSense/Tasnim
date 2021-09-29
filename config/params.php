@@ -6,8 +6,8 @@ return [
     'currencyIcon' => 'fa-dzd',
     // 'currencySymbol' => '$',
     'currencySymbol' => 'DZ',
-    // 'datePickerFormat' => 'yyyy-mm-dd',
-    'datePickerFormat' => 'dd-mm-yyyy',
+    'datePickerFormat' => 'yyyy-mm-dd',
+    // 'datePickerFormat' => 'dd-mm-yyyy',
     'website' => 'https://github.com/corposense/eqraa',
 
 ];

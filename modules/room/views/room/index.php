@@ -8,6 +8,7 @@ use yii\grid\GridView;
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = Yii::t('app', 'Rooms');
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Configuration'), 'url' => ['/default/index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="room-index">
@@ -28,12 +29,12 @@ $this->params['breadcrumbs'][] = $this->title;
             'room_id',
             //'building_id',
             [
-		'label' => Yii::t('app', 'Building'),
-		'attribute' => 'building_id',
-		'value' =>'building.building_name',
- 	    ],
+          		'label' => Yii::t('app', 'Building'),
+          		'attribute' => 'building_id',
+          		'value' =>'building.building_name',
+       	    ],
             'room_name',
-            
+
             //'longitude',
             //'latitude',
             // 'created_at',

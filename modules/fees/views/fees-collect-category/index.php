@@ -88,7 +88,7 @@ endif;
 		                'value' => NULL,
 		              ],
 		        ]),
-			'format' => 'html',	
+			'format' => 'html',
 		    ],
 
 		    [
@@ -100,7 +100,7 @@ endif;
 		            'model'=>$searchModel,
 		            'attribute'=>'fees_collect_end_date',
 		            'clientOptions' =>[
-		                'dateFormat' => 'dd-mm-yyyy',
+		                'dateFormat' => Yii::$app->formatter->dateFormat, //'dd-mm-yyyy',
 		                'changeMonth'=> true,
 		                'changeYear'=> true,
 				'defaultValue'=>null,
@@ -111,7 +111,7 @@ endif;
 		                'value' => NULL,
 		              ],
 		        ]),
-			'format' => 'html',	
+			'format' => 'html',
 		    ],
 		    [
 			'attribute' => 'fees_collect_due_date',
@@ -122,7 +122,7 @@ endif;
 		            'model'=>$searchModel,
 		            'attribute'=>'fees_collect_due_date',
 		            'clientOptions' =>[
-		                'dateFormat' => 'dd-mm-yyyy',
+		                'dateFormat' =>  Yii::$app->formatter->dateFormat, //'dd-mm-yyyy',
 		                'changeMonth'=> true,
 		                'changeYear'=> true,
 				'defaultValue'=>null,
@@ -133,29 +133,29 @@ endif;
 		                'value' => NULL,
 		              ],
 		        ]),
-			'format' => 'html',	
+			'format' => 'html',
 		    ],
-		 
+
 		    [
 			'header' => Yii::t('fees', 'Add Fees Details'),
 			'class' => 'yii\grid\ActionColumn',
 			'template' => '{add_sub_head}',
 			'buttons'=>[
 		                      'add_sub_head' => function ($url, $model) {
-					$url = \Yii::$app->getUrlManager()->createUrl(["fees/fees-category-details/create", 'fcc_id'=>$model->fees_collect_category_id]);     
+					$url = \Yii::$app->getUrlManager()->createUrl(["fees/fees-category-details/create", 'fcc_id'=>$model->fees_collect_category_id]);
 		                        return Html::a('<span class="glyphicon glyphicon-plus text-aqua"></span>', $url, [
 		                                'title' => Yii::t('yii', 'Add Sub Head'),'class' => 'text-center', 'style' => 'font-size:20px'
-		                        ]);                                
-		    
+		                        ]);
+
 		                      }
 		                  ],
-			'contentOptions' => ['style' => 'text-align:center'],	
+			'contentOptions' => ['style' => 'text-align:center'],
 		    ],
 		   [
 			'class' => '\pheme\grid\ToggleColumn',
 			'attribute' => 'is_status',
 			'enableAjax' => false,
-			'filter' => ['0' => 'Active', '1' => 'Inactive'],
+			'filter' => ['0' => Yii::t('app', 'Active'), '1' => Yii::t('app', 'Inactive')],
 			'contentOptions' => ['class' => 'text-center'],
 	        ],
 

@@ -8,6 +8,7 @@ use yii\grid\GridView;
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = Yii::t('app', 'Semesters');
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Configuration'), 'url' => ['/default/index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="semester-index">
@@ -42,7 +43,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'contentOptions' => ['class' => 'text-center'],
                 'attribute' => 'is_status',
                 'enableAjax' => true,
-                'filter' => ['0' => 'Active', '1' => 'Inactive']
+                'filter' => ['0' => Yii::t('app', 'Active'), '1' => Yii::t('app', 'Inactive')]
             ],
             //'created_at',
             // 'created_by',

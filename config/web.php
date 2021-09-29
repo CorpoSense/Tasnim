@@ -99,7 +99,7 @@ $config = [
 		    ],
 		],
   		'formatter' => [
-  			// 'dateFormat' => 'dd/MM/yyyy', // disabled to use 'system' or use Yii::$app->params['datePickerFormat']
+  			'dateFormat' => 'dd-mm-yyyy', // disabled to use 'system' or use Yii::$app->params['datePickerFormat']
   			'datetimeFormat' => 'php:d-m-Y H:i:s',
   			'timeFormat' => 'php:H:i:s',
   			'decimalSeparator' => ',',

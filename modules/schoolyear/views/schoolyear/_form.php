@@ -14,43 +14,50 @@ use kartik\widgets\DatePicker;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?php echo $form->field($model, 'start')->widget(DatePicker::classname(), [
-    'options' => ['placeholder' => Yii::t('app', 'Enter Start of the School Year') .' ...'],
-    'pluginOptions' => [
-        'autoclose'=>true,
-        'format' => Yii::$app->params['datePickerFormat']
-        // 'format' => Yii::$app->formatter->dateFormat
-        // 'format' => 'yyyy-mm-dd'
-    ]
-]); ?>
+    <div class="row">
+      <div class="col col-md-12">
+        <?= $form->field($model, 'school_year_alias')->textInput(['maxlength' => 45]) ?>
+      </div>
+    </div>
 
-<?php echo $form->field($model, 'end')->widget(DatePicker::classname(), [
-'options' => ['placeholder' => Yii::t('app', 'Enter End of the School Year') .' ...'],
-'pluginOptions' => [
-    'autoclose'=>true,
-    'format' => Yii::$app->params['datePickerFormat']
-    // 'format' => Yii::$app->formatter->dateFormat
-    // 'format' => 'yyyy-mm-dd'
-]
-]); ?>
+    <div class="row">
+      <div class="col col-md-6">
+        <?php echo $form->field($model, 'end')->widget(DatePicker::classname(), [
+        'options' => ['placeholder' => Yii::t('app', 'End Date') .' ...'],
+        'type' => DatePicker::TYPE_INPUT,
+        'pluginOptions' => [
+            'autoclose'=>true,
+            'format' => Yii::$app->params['datePickerFormat']
+            // 'format' => Yii::$app->formatter->dateFormat
+            // 'format' => 'yyyy-mm-dd '
+        ]
+        ]); ?>
+      </div>
 
-    <?= $form->field($model, 'school_year_alias')->textInput(['maxlength' => 45]) ?>
+      <div class="col col-md-6">
+        <?php echo $form->field($model, 'start')->widget(DatePicker::classname(), [
+        'options' => ['placeholder' => Yii::t('app', 'Start Date') .' ...'],
+        'type' => DatePicker::TYPE_INPUT,
+        'pluginOptions' => [
+            'autoclose'=>true,
+            'format' => Yii::$app->params['datePickerFormat']
+            // 'format' => Yii::$app->formatter->dateFormat
+            // 'format' => 'yyyy-mm-dd'
+              ]
+          ]); ?>
+      </div>
 
-
+    </div>
 
     <?php
     /**
      * Hidden inputs
      */
     if($model->isNewRecord){
-
         echo $form->field($model, 'created_by')->hiddenInput(['value' => isset(Yii::$app->user->identity->id) ? Yii::$app->user->identity->id : 2])->label(false);
         echo $form->field($model, 'updated_by')->hiddenInput(['value' => isset(Yii::$app->user->identity->id) ? Yii::$app->user->identity->id : 2])->label(false);
-
-    }else{
-
+    } else {
         echo $form->field($model, 'updated_by')->hiddenInput(['value' => isset(Yii::$app->user->identity->id) ? Yii::$app->user->identity->id : 2])->label(false);
-
     }
     ?>
 

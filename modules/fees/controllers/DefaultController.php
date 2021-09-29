@@ -14,16 +14,16 @@
  * GNU General Public License for more details.
 
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see http://www.gnu.org/licenses. 
+ * along with this program.  If not, see http://www.gnu.org/licenses.
 
- * You can contact RUDRA SOFTECH, 1st floor Geeta Ceramics, 
+ * You can contact RUDRA SOFTECH, 1st floor Geeta Ceramics,
  * Opp. Thakkarnagar BRTS station, Ahmedbad - 382350, India or
  * at email address info@rudrasoftech.com.
- * 
+ *
  * The interactive user interfaces in modified source and object code versions
  * of this program must display Appropriate Legal Notices, as required under
  * Section 5 of the GNU Affero General Public License version 3.
- 
+
  * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
  * these Appropriate Legal Notices must retain the display of the "Powered by
  * RUDRA SOFTECH" logo. If the display of the logo is not reasonably feasible for
@@ -48,7 +48,7 @@ class DefaultController extends Controller
 	$paidData = $unPaidData = $fcCategory = [];
 	if(Yii::$app->session->get('stu_id'))
 		return $this->redirect(['/fees/fees-payment-transaction/stu-fees-data']);
-	
+
 	//Course Wise Collection Count
 	$cateWisePaid = 0;
 	$courseWiseCollect = (new \yii\db\Query())
@@ -60,11 +60,11 @@ class DefaultController extends Controller
 			->all();
 
 	$actFcc = \app\modules\fees\models\FeesCollectCategory::find()->where(['is_status'=>0])->asArray()->all();
-	
+
 	foreach($actFcc as $v) {
 		$stuCount = \app\modules\student\models\StuMaster::find()->where(['is_status'=>0, 'stu_master_batch_id'=>$v['fees_collect_batch_id']])->count();
 		$fccTotal = \app\modules\fees\models\FeesCategoryDetails::getFeeCategoryTotal($v['fees_collect_category_id']);
-		$cateWisePaid+=($stuCount*$fccTotal); 
+		$cateWisePaid+=($stuCount*$fccTotal);
 	}
 
 	$paidTotal = (new \yii\db\Query())->from('fees_payment_transaction fpt')
@@ -77,14 +77,14 @@ class DefaultController extends Controller
 	$unPaidPer =' ('.(($cateWisePaid!=0) ? round((($cateWisePaid-$paidTotal)*100)/$cateWisePaid, 2) : 0).'%)';
 
 	$paidUnpaidData = [
-				['name'=>'Paid'.$paidPer, 'y'=>$paidTotal, 'color'=>'#77C730'],
-				['name'=>'Unpaid'.$unPaidPer, 'y'=>($cateWisePaid-$paidTotal), 'color'=>'#F45B5B'],
+				['name'=> Yii::t('fees','Paid Amount').$paidPer, 'y'=>$paidTotal, 'color'=>'#77C730'],
+				['name'=>Yii::t('fees', 'Unpaid Amount').$unPaidPer, 'y'=>($cateWisePaid-$paidTotal), 'color'=>'#F45B5B'],
 			];
 
-	
+
 	//Individual Fees Collection Category Wise
 	$fcWiseDetails = (new \yii\db\Query())
-		    ->select(['fees_collect_category_id', 'fees_collect_batch_id', "CONCAT(fcc.fees_collect_name,'(',bt.batch_name,')') AS fc_name"]) 
+		    ->select(['fees_collect_category_id', 'fees_collect_batch_id', "CONCAT(fcc.fees_collect_name,'(',bt.batch_name,')') AS fc_name"])
 		    ->from('fees_collect_category fcc')
 		    ->join('JOIN', 'batches bt', 'bt.batch_id = fcc.fees_collect_batch_id')
 		    ->where(['fcc.is_status' => '0'])
@@ -102,17 +102,17 @@ class DefaultController extends Controller
 		$fccUnPaid = $fccTotal-$fccPaid;
 		$fcCategory[] = $v['fc_name'];
 		$paidData[] = $fccPaid;
-		$unPaidData[] = $fccUnPaid;		
+		$unPaidData[] = $fccUnPaid;
 	}
-	
+
 	$fccWisePaidUnPaid = [
-				['name'=>'Paid Amount', 'data'=>$paidData, 'color'=>'#77C730'],
-				['name'=>'Unpaid Amount', 'data'=>$unPaidData, 'color'=>'#F45B5B'],
+				['name'=>Yii::t('fees', 'Paid Amount'), 'data'=>$paidData, 'color'=>'#77C730'],
+				['name'=>Yii::t('fees', 'Unpaid Amount'), 'data'=>$unPaidData, 'color'=>'#F45B5B'],
 			];
 
 	//Recently fees transaction
 	$feeRecent = (new \yii\db\Query())
-		    ->select(['fpt.fees_pay_tran_id', 'fpt.fees_pay_tran_amount', 'stu_unique_id', "CONCAT(si.stu_first_name, ' ', si.stu_last_name) AS 'stu_name'", 'fcc.fees_collect_name', 'DATE_FORMAT(fpt.fees_pay_tran_date, "%d-%m-%Y") AS tranDate']) 
+		    ->select(['fpt.fees_pay_tran_id', 'fpt.fees_pay_tran_amount', 'stu_unique_id', "CONCAT(si.stu_first_name, ' ', si.stu_last_name) AS 'stu_name'", 'fcc.fees_collect_name', 'DATE_FORMAT(fpt.fees_pay_tran_date, "%d-%m-%Y") AS tranDate'])
 		    ->from('fees_payment_transaction fpt')
 		    ->join('JOIN', 'fees_collect_category fcc', 'fcc.fees_collect_category_id = fpt.fees_pay_tran_collect_id')
 		    ->join('JOIN', 'stu_info si', 'si.stu_info_stu_master_id = fpt.fees_pay_tran_stu_id')
@@ -122,7 +122,7 @@ class DefaultController extends Controller
 		    ->all();
 
 
-        return $this->render('index', ['feeRecent'=>$feeRecent, 
+        return $this->render('index', ['feeRecent'=>$feeRecent,
 					'courseWiseCollect'=>$courseWiseCollect,
 					'paidUnpaidData'=>$paidUnpaidData,
 					'fccWisePaidUnPaid'=>$fccWisePaidUnPaid,

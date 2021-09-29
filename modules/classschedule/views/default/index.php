@@ -11,6 +11,7 @@ use yii\helpers\ArrayHelper;
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = Yii::t('app', 'Class Schedules');
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Configuration'), 'url' => ['/default/index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <script src="<?= Yii::$app->request->baseUrl ?>/js/print/jspdf.min.js"></script>
@@ -51,7 +52,7 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
         <div class="col-md-2">
             <span id="AE_btn_pdf" class="cal-button btn btn-primary" style="margin-top: 25px;"><input type="hidden" id = "zz_pdf" value = "" /> <?= Yii::t('app', 'Export as Pdf') ?> </span>
-            
+
 
         </div>
     </div>
@@ -84,7 +85,7 @@ EOF;
             $updateEvent = Yii::t('dash', 'Update Schedule');
             $JSEventClick = <<<EOF
 	function(calEvent, jsEvent, view) {
-                       
+
 	    var eventId = calEvent.id;
                         console.log(eventId);
 		$.ajax({
@@ -212,7 +213,7 @@ yii\bootstrap\Modal::end();
 
         });
         /**
-         * 
+         *
          */
 
         $("#classschedulesearch-room_id").on("change", function () {
@@ -234,9 +235,9 @@ yii\bootstrap\Modal::end();
             });
 
         });
-        
+
         $("#AE_btn_pdf").click(function () {
-        
+
             //#AEFC is my div for FullCalendar
             html2canvas($('#w0'), {
                 background:'#fff',
@@ -253,7 +254,7 @@ yii\bootstrap\Modal::end();
         });
 
     });
-    
+
     function download(strData, strFileName, strMimeType) {
         var D = document,
                 A = arguments,

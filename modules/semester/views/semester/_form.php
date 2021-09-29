@@ -15,23 +15,31 @@ use kartik\widgets\DatePicker;
 
     <?= $form->field($model, 'semester_name')->textInput(['maxlength' => 45]) ?>
 
-    <?php echo $form->field($model, 'start_date')->widget(DatePicker::classname(), [
-    'options' => ['placeholder' => Yii::t('app', 'Enter Start of the Semester') .' ...'],
-    'pluginOptions' => [
-        'autoclose'=>true,
-        // 'format' => Yii::$app->formatter->dateFormat
-        'format' => 'yyyy-mm-dd'
-    ]
-]); ?>
+    <div class="row">
 
-    <?php echo $form->field($model, 'end_date')->widget(DatePicker::classname(), [
-    'options' => ['placeholder' => Yii::t('app', 'Enter End of the Semester') .' ...'],
-    'pluginOptions' => [
-        'autoclose'=>true,
-        // 'format' => Yii::$app->formatter->dateFormat
-        'format' => 'yyyy-mm-dd'
-    ]
-]); ?>
+      <div class="col col-md-6">
+        <?php echo $form->field($model, 'end_date')->widget(DatePicker::classname(), [
+        'options' => ['placeholder' => Yii::t('app', 'End Date') .' ...'],
+        'pluginOptions' => [
+            'autoclose'=>true,
+            'format' => Yii::$app->formatter->dateFormat
+            // 'format' => 'yyyy-mm-dd'
+            ]
+        ]); ?>
+      </div>
+
+      <div class="col col-md-6">
+        <?php echo $form->field($model, 'start_date')->widget(DatePicker::classname(), [
+        'options' => ['placeholder' => Yii::t('app', 'Start Date') .' ...'],
+        'pluginOptions' => [
+            'autoclose'=>true,
+            'format' => Yii::$app->formatter->dateFormat
+            // 'format' => 'yyyy-mm-dd'
+              ]
+          ]); ?>
+      </div>
+
+  </div>
 
     <?php
     /**

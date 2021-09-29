@@ -12,7 +12,7 @@ use yii\helpers\ArrayHelper;
 <div class="room-form">
 
     <?php $form = ActiveForm::begin(); ?>
-    
+
     <?= $form->field($model, 'building_id')->dropDownList(ArrayHelper::map(app\modules\building\models\Building::find()->all(),'building_id','building_name'),['prompt'=>Yii::t('app', 'Select Building')]); ?>
 
     <?= $form->field($model, 'room_name')->textInput(['maxlength' => 45]) ?>
@@ -22,14 +22,11 @@ use yii\helpers\ArrayHelper;
      * Hidden inputs
      */
     if($model->isNewRecord){
-        
         echo $form->field($model, 'created_by')->hiddenInput(['value' => isset(Yii::$app->user->identity->id) ? Yii::$app->user->identity->id : 2])->label(false);
         echo $form->field($model, 'updated_by')->hiddenInput(['value' => isset(Yii::$app->user->identity->id) ? Yii::$app->user->identity->id : 2])->label(false);
-    
-    }else{
-        
-        echo $form->field($model, 'updated_by')->hiddenInput(['value' => isset(Yii::$app->user->identity->id) ? Yii::$app->user->identity->id : 2])->label(false);
 
+    }else{
+        echo $form->field($model, 'updated_by')->hiddenInput(['value' => isset(Yii::$app->user->identity->id) ? Yii::$app->user->identity->id : 2])->label(false);
     }
     ?>
     <div class="form-group">

@@ -149,4 +149,5 @@ return [
     'Updated By' => '',
     'View Bank' => '',
     'View Fees Collect Category' => '',
+    'Fees Amount' => '',
 ];

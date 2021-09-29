@@ -149,4 +149,5 @@ return [
     'Updated By' => 'Mis à jour par',
     'View Bank' => 'Voir la banque',
     'View Fees Collect Category' => 'Visualiser catégorie de collection des frais',
+    'Fees Amount' => 'Montant des frais',
 ];

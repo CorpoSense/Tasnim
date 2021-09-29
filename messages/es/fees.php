@@ -149,4 +149,5 @@ return [
     'Updated By' => 'Actualizado por el',
     'View Bank' => 'Ver Banco',
     'View Fees Collect Category' => 'Ver Categoría de cuotas Cobradas',
+    'Fees Amount' => 'Monto de tarifas',
 ];

@@ -149,4 +149,5 @@ return [
     'Updated By' => 'द्वारा अपडेट कीया गया',
     'View Bank' => 'बैंक देखें',
     'View Fees Collect Category' => 'फीस संग्रह श्रेणी देखें',
+    'Fees Amount' => 'शुल्क राशि',
 ];

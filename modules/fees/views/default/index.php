@@ -1,5 +1,5 @@
-<?php 
-use yii\helpers\Html; 
+<?php
+use yii\helpers\Html;
 use miloschuman\highcharts\Highcharts;
 use yii\web\JsExpression;
 
@@ -47,7 +47,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
 </div> <!-- /. End Row-->
 <!---End display module link block--->
-<!---Start First Row Course Wise Collect Fees---> 
+<!---Start First Row Course Wise Collect Fees--->
 <div class="row">
 <div class="col-sm-6">
    <div class="box box-info">
@@ -62,19 +62,19 @@ $this->params['breadcrumbs'][] = $this->title;
 	if(!empty($courseWiseCollect)) {
 		echo Highcharts::widget([
 			'scripts' => [
-				'highcharts-3d',   
+				'highcharts-3d',
 			],
-			'options' => [	
+			'options' => [
 				'exporting'=>[
-				 	'enabled'=>false 
+				 	'enabled'=>false
 				],
-				'legend'=>[
-				    'align'=>'center',
-				    'verticalAlign'=>'bottom',
-				    'layout'=>'vertical',
-				    'x'=>0,
-				    'y'=>0,
-				],
+				// 'legend'=>[
+				//     'align'=>'left',
+				//     'verticalAlign'=>'bottom',
+				//     'layout'=>'vertical',
+				//     'x'=>0,
+				//     'y'=>0,
+				// ],
 				'credits'=>[
 	    				'enabled'=>false
 	  			 ],
@@ -96,16 +96,20 @@ $this->params['breadcrumbs'][] = $this->title;
 							'enabled'=>false
 					    	 ],
 						 'showInLegend'=>true,
-					],	
+					],
 					'series'=>[
 						'pointPadding'=>0,
-						'groupPadding'=>0,      
+						'groupPadding'=>0,
 					 ],
 				],
 				'series'=> [
 					[
-						'name'=>'Collect Amount',
-						'data'=>$courseWiseCollect
+						'name'=> 'Total',
+						'data'=>$courseWiseCollect,
+						'dataLabels' => [
+								'enabled' => true,
+								'format' => '{point.name}',
+						]
 					]
 				]
 			],
@@ -130,12 +134,12 @@ $this->params['breadcrumbs'][] = $this->title;
 <?php
 	if(!empty($paidUnpaidData[0]['y']) || !empty($paidUnpaidData[1]['y'])) {
 		echo Highcharts::widget([
-			'options' => [	
+			'options' => [
 				'exporting'=>[
-				 	'enabled'=>false 
+				 	'enabled'=>false
 				],
 				'legend'=>[
-				    'align'=>'center',	
+				    'align'=>'center',
 				    'verticalAlign'=>'bottom',
 				    'layout'=>'horizontal',
 				    'x'=>0,
@@ -166,15 +170,15 @@ $this->params['breadcrumbs'][] = $this->title;
 							'enabled'=>false
 					    	 ],
 						 'showInLegend'=>true,
-					],	
+					],
 					'series'=>[
 						'pointPadding'=>0,
-						'groupPadding'=>0,      
+						'groupPadding'=>0,
 					 ],
 				],
 				'series'=> [
 					[
-						'name'=>'Collect Amount',
+						'name'=> 'Total',
 						'colors'=>'#ededed',
 						'data'=>$paidUnpaidData
 					]
@@ -207,13 +211,13 @@ $this->params['breadcrumbs'][] = $this->title;
 <?php
 	if(!empty($fcCategory) && !empty($fccWisePaidUnPaid)) {
 		echo Highcharts::widget([
-		'options' => [	
+		'options' => [
 			'chart'=>[
-				'type'=>'column', 
-			
+				'type'=>'column',
+
 			],
 			'exporting'=>[
-				'enabled'=>false, 
+				'enabled'=>false,
 			],
 			'credits'=>[
 	    			'enabled'=>false,
@@ -230,7 +234,7 @@ $this->params['breadcrumbs'][] = $this->title;
 			],
 			'yAxis'=>[
 				'title'=>[
-					'text'=>'Fees Amount',
+					'text'=> Yii::t('fees', 'Fees Amount'),
 				]
 			],
 			'plotOptions'=>[
@@ -244,15 +248,15 @@ $this->params['breadcrumbs'][] = $this->title;
 		]);
 	} else {
 		echo '<div class="alert alert-danger">'.Yii::t('fees', 'No results found.').'</div>';
-	}  
+	}
 ?>
 	</div>
    </div>
 </div>
 </div>
-<!--End Paid/Due amount graph block--->	
+<!--End Paid/Due amount graph block--->
 
-<!---Start Second Row Recently Added Student List Block---> 
+<!---Start Second Row Recently Added Student List Block--->
 <div class="row">
 <div class="col-md-12">
 	<div class="box box-primary">
@@ -301,8 +305,8 @@ $this->params['breadcrumbs'][] = $this->title;
 		<div class="box-footer clearfix">
 			<?php echo Html::a(Yii::t('fees','Collect Fees'), ['fees-payment-transaction/collect'], ['class'=>'btn btn-sm btn-primary btn-flat pull-left']); ?>
 		</div>
-	</div>	
-	
+	</div>
+
 
 </div>
 </div>

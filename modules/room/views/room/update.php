@@ -5,9 +5,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\modules\room\models\Room */
 
-$this->title = Yii::t('app', 'Update {modelClass}: ', [
-    'modelClass' => 'Room',
-]) . ' ' . $model->room_id;
+$this->title = Yii::t('app', 'Update') .' '. Yii::t('app', 'Room').':' . $model->room_id;
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Rooms'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->room_id, 'url' => ['view', 'id' => $model->room_id]];
 $this->params['breadcrumbs'][] = Yii::t('app', 'Update');

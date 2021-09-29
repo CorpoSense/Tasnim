@@ -168,7 +168,7 @@ class ClassSchedule extends \yii\db\ActiveRecord
     {
         return $this->hasMany(StuSchedule::className(), ['class_schedule_id' => 'class_schedule_id']);
     }
-    
+
     /**
      * @return \yii\db\ActiveQuery
      */

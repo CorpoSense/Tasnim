@@ -149,4 +149,5 @@ return [
     'Updated By' => 'સુધારાનાર',
     'View Bank' => ' જુઓ બેન્ક',
     'View Fees Collect Category' => 'જુઓ ફી એકત્રિત કરવાનો પ્રકાર',
+    'Fees Amount' => 'ફીની રકમ',
 ];
