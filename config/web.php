@@ -96,6 +96,9 @@ $config = [
 		            'class' => 'yii\i18n\PhpMessageSource',
 		            'basePath' => '@app/messages',
 		        ],
+            // '*' => [
+            //     'class' => 'yii\i18n\PhpMessageSource'
+            // ],
 		    ],
 		],
   		'formatter' => [
@@ -163,7 +166,10 @@ $config = [
                   ],
               ],
         ],
-    ],
+        'hijridatetime' => [
+            'class' => 'app\modules\hijridatetime\HijriDateTime',
+        ],
+    ], // modules
 ];
 
 if (YII_ENV_DEV) {

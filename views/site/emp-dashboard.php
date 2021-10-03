@@ -269,7 +269,7 @@ EOF;
                }
 EOF;
 	?>
-                    <?= \yii2fullcalendar\yii2fullcalendar::widget([
+<?= \yii2fullcalendar\yii2fullcalendar::widget([
 				'options' => ['language' => 'es',],
 				'clientOptions' => [
 					'fixedWeekCount' => false,

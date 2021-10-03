@@ -1,8 +1,10 @@
 <?php
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+
 $this->title = Yii::$app->name.' | '.Yii::t('app', 'Login');
 ?>
+
 <div class="login-box">
       <div class="login-logo">
 		&nbsp;

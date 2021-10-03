@@ -1,6 +1,7 @@
 <?php
 use yii\helpers\Html;
 use yii\helpers\Url;
+use app\modules\hijridatetime\widgets\HijriDatePicker;
 
 $this->title = Yii::t('app', 'Admin Dashboard');
 $this->params['breadcrumbs'][] = $this->title;
@@ -286,15 +287,19 @@ EOF;
 					'ajaxEvents' => yii\helpers\Url::toRoute(['/dashboard/events/view-events'])
 				]);
 			    ?>
-				   <div class="row">
-					<ul class="legend">
-					    <li><span class="holiday"></span> <?php echo Yii::t('app', 'Holiday') ?></li>
-					    <li><span class="importantnotice"></span> <?php echo Yii::t('app', 'Important Notice') ?></li>
-					    <li><span class="meeting"></span> <?php echo Yii::t('app', 'Meeting') ?></li>
-					    <li><span class="messages"></span> <?php echo Yii::t('app', 'Messages') ?></li>
-					</ul>
+				   <div class="row" style="margin: 10px;">
+             <div class="col col-sm-6">
+    					<ul class="legend">
+    					    <li><span class="holiday"></span> <?php echo Yii::t('app', 'Holiday') ?></li>
+    					    <li><span class="importantnotice"></span> <?php echo Yii::t('app', 'Important Notice') ?></li>
+    					    <li><span class="meeting"></span> <?php echo Yii::t('app', 'Meeting') ?></li>
+    					    <li><span class="messages"></span> <?php echo Yii::t('app', 'Messages') ?></li>
+    					</ul>
+            </div>
+            <div class="col col-sm-6">
+              <?= HijriDatePicker::widget(/*['clientOptions' => ['viewMode' => 'months']]*/) ?>
+            </div>
 				   </div>
-                                </div><!-- /.box-body -->
                             </div><!-- /.box -->
 
                         </section><!-- /.Left col -->

@@ -1,5 +1,6 @@
-<?php 
-use yii\helpers\Html; 
+<?php
+use yii\helpers\Html;
+
 $this->title = Yii::t('app', 'Master Configuration');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -12,15 +13,15 @@ $this->params['breadcrumbs'][] = $this->title;
    <div class="box-body">
 	<div class="row">
 		<div class="col-md-4 col-sm-6 col-xs-12">
-		      <div class="edusec-link-box">
-		        <span class="edusec-link-box-icon bg-aqua"><i class="fa fa-flag"></i></span>
-		        <div class="edusec-link-box-content">
-		          <span class="edusec-link-box-text"><?= Html::a(Yii::t('app', 'Country'), ['/country']);?></span>
-		          <span class="edusec-link-box-number"><?= app\models\Country::find()->where(['is_status'=>0])->count(); ?></span>
-			 <span class="edusec-link-box-desc"></span>
-			  <span class="edusec-link-box-bottom"><?= Html::a('<i class="fa fa-plus-square"></i> '. Yii::t('app', 'Create New'), ['/country/create']); ?></span>
-		        </div><!-- /.info-box-content -->
-		      </div><!-- /.info-box -->
+      <div class="edusec-link-box">
+        <span class="edusec-link-box-icon bg-aqua"><i class="fa fa-flag"></i></span>
+        <div class="edusec-link-box-content">
+          <span class="edusec-link-box-text"><?= Html::a(Yii::t('app', 'Country'), ['/country']);?></span>
+          <span class="edusec-link-box-number"><?= app\models\Country::find()->where(['is_status'=>0])->count(); ?></span>
+          <span class="edusec-link-box-desc"></span>
+          <span class="edusec-link-box-bottom"><?= Html::a('<i class="fa fa-plus-square"></i> '. Yii::t('app', 'Create New'), ['/country/create']); ?></span>
+        </div><!-- /.info-box-content -->
+      </div><!-- /.info-box -->
 		</div>
 		<div class="col-md-4 col-sm-6 col-xs-12">
 		      <div class="edusec-link-box">
@@ -57,123 +58,118 @@ $this->params['breadcrumbs'][] = $this->title;
 		        </div><!-- /.info-box-content -->
 		      </div><!-- /.info-box -->
 		</div>
-                
-                <div class="col-md-4 col-sm-6 col-xs-12">
-		      <div class="edusec-link-box">
-		        <span class="edusec-link-box-icon bg-aqua"><i class="fa fa-building"></i></span>
-		        <div class="edusec-link-box-content">
-		          <span class="edusec-link-box-text"><?= Html::a(Yii::t('app', 'Building'), ['/building']);?></span>
-                          <span class="edusec-link-box-number"><?= app\modules\building\models\Building::find()->count(); ?></span>
-			 <span class="edusec-link-box-desc"></span>
-			  <span class="edusec-link-box-bottom"><?= Html::a('<i class="fa fa-plus-square"></i> '.Yii::t('app', 'Create New'), ['/building/building/create']); ?></span>
-		        </div><!-- /.info-box-content -->
-		      </div><!-- /.info-box -->
+
+    <div class="col-md-4 col-sm-6 col-xs-12">
+      <div class="edusec-link-box">
+        <span class="edusec-link-box-icon bg-aqua"><i class="fa fa-building"></i></span>
+        <div class="edusec-link-box-content">
+          <span class="edusec-link-box-text"><?= Html::a(Yii::t('app', 'Building'), ['/building']);?></span>
+          <span class="edusec-link-box-number"><?= app\modules\building\models\Building::find()->count(); ?></span>
+          <span class="edusec-link-box-desc"></span>
+          <span class="edusec-link-box-bottom"><?= Html::a('<i class="fa fa-plus-square"></i> '.Yii::t('app', 'Create New'), ['/building/building/create']); ?></span>
+        </div><!-- /.info-box-content -->
+      </div><!-- /.info-box -->
 		</div>
-                
-                <div class="col-md-4 col-sm-6 col-xs-12">
-		      <div class="edusec-link-box">
-		        <span class="edusec-link-box-icon bg-aqua"><i class="fa fa-home"></i></span>
-		        <div class="edusec-link-box-content">
-		          <span class="edusec-link-box-text"><?= Html::a(Yii::t('app', 'Class Room'), ['/room']);?></span>
-                          <span class="edusec-link-box-number"><?= app\modules\building\models\Building::find()->count(); ?></span>
-			 <span class="edusec-link-box-desc"></span>
-			  <span class="edusec-link-box-bottom"><?= Html::a('<i class="fa fa-plus-square"></i> '.Yii::t('app', 'Create New'), ['/room/room/create']); ?></span>
-		        </div><!-- /.info-box-content -->
-		      </div><!-- /.info-box -->
+
+    <div class="col-md-4 col-sm-6 col-xs-12">
+      <div class="edusec-link-box">
+        <span class="edusec-link-box-icon bg-aqua"><i class="fa fa-home"></i></span>
+        <div class="edusec-link-box-content">
+          <span class="edusec-link-box-text"><?= Html::a(Yii::t('app', 'Class Room'), ['/room']);?></span>
+          <span class="edusec-link-box-number"><?= app\modules\building\models\Building::find()->count(); ?></span>
+      	  <span class="edusec-link-box-desc"></span>
+      	  <span class="edusec-link-box-bottom"><?= Html::a('<i class="fa fa-plus-square"></i> '.Yii::t('app', 'Create New'), ['/room/room/create']); ?></span>
+        </div><!-- /.info-box-content -->
+      </div><!-- /.info-box -->
 		</div>
-                
-                <div class="col-md-4 col-sm-6 col-xs-12">
-		      <div class="edusec-link-box">
-		        <span class="edusec-link-box-icon bg-aqua"><i class="fa fa-calendar"></i></span>
-		        <div class="edusec-link-box-content">
-		          <span class="edusec-link-box-text"><?= Html::a(Yii::t('app', 'School Year'), ['/schoolyear']);?></span>
-                          <span class="edusec-link-box-number"><?= app\modules\schoolyear\models\Schoolyear::find()->count(); ?></span>
-			 <span class="edusec-link-box-desc"></span>
-			  <span class="edusec-link-box-bottom"><?= Html::a('<i class="fa fa-plus-square"></i> '.Yii::t('app', 'Create New'), ['/schoolyear/schoolyear/create']); ?></span>
-		        </div><!-- /.info-box-content -->
-		      </div><!-- /.info-box -->
+
+    <div class="col-md-4 col-sm-6 col-xs-12">
+      <div class="edusec-link-box">
+        <span class="edusec-link-box-icon bg-aqua"><i class="fa fa-calendar"></i></span>
+        <div class="edusec-link-box-content">
+          <span class="edusec-link-box-text"><?= Html::a(Yii::t('app', 'School Year'), ['/schoolyear']);?></span>
+          <span class="edusec-link-box-number"><?= app\modules\schoolyear\models\Schoolyear::find()->count(); ?></span>
+          <span class="edusec-link-box-desc"></span>
+		  <span class="edusec-link-box-bottom"><?= Html::a('<i class="fa fa-plus-square"></i> '.Yii::t('app', 'Create New'), ['/schoolyear/schoolyear/create']); ?></span>
+        </div><!-- /.info-box-content -->
+      </div><!-- /.info-box -->
 		</div>
-                
-                <div class="col-md-4 col-sm-6 col-xs-12">
-		      <div class="edusec-link-box">
-		        <span class="edusec-link-box-icon bg-aqua"><i class="fa fa-clock-o"></i></span>
-		        <div class="edusec-link-box-content">
-		          <span class="edusec-link-box-text"><?= Html::a(Yii::t('app', 'Semester'), ['/semester']);?></span>
-                          <span class="edusec-link-box-number"><?= app\modules\semester\models\Semester::find()->count(); ?></span>
-			 <span class="edusec-link-box-desc"></span>
-			  <span class="edusec-link-box-bottom"><?= Html::a('<i class="fa fa-plus-square"></i> '.Yii::t('app', 'Create New'), ['/semester/semester/create']); ?></span>
-		        </div><!-- /.info-box-content -->
-		      </div><!-- /.info-box -->
+
+    <div class="col-md-4 col-sm-6 col-xs-12">
+      <div class="edusec-link-box">
+        <span class="edusec-link-box-icon bg-aqua"><i class="fa fa-clock-o"></i></span>
+        <div class="edusec-link-box-content">
+          <span class="edusec-link-box-text"><?= Html::a(Yii::t('app', 'Semester'), ['/semester']);?></span>
+          <span class="edusec-link-box-number"><?= app\modules\semester\models\Semester::find()->count(); ?></span>
+          <span class="edusec-link-box-desc"></span>
+          <span class="edusec-link-box-bottom"><?= Html::a('<i class="fa fa-plus-square"></i> '.Yii::t('app', 'Create New'), ['/semester/semester/create']); ?></span>
+        </div><!-- /.info-box-content -->
+      </div><!-- /.info-box -->
 		</div>
-                
-                <div class="col-md-4 col-sm-6 col-xs-12">
-		      <div class="edusec-link-box">
-		        <span class="edusec-link-box-icon bg-aqua"><i class="fa fa-book"></i></span>
-		        <div class="edusec-link-box-content">
-		          <span class="edusec-link-box-text"><?= Html::a(Yii::t('app', 'Subjects'), ['/subjects']);?></span>
-                          <span class="edusec-link-box-number"><?= app\modules\subjects\models\Subjects::find()->count(); ?></span>
-			 <span class="edusec-link-box-desc"></span>
-			  <span class="edusec-link-box-bottom"><?= Html::a('<i class="fa fa-plus-square"></i> '.Yii::t('app', 'Create New'), ['/subjects/subjects/create']); ?></span>
-		        </div><!-- /.info-box-content -->
-		      </div><!-- /.info-box -->
+
+    <div class="col-md-4 col-sm-6 col-xs-12">
+      <div class="edusec-link-box">
+        <span class="edusec-link-box-icon bg-aqua"><i class="fa fa-book"></i></span>
+        <div class="edusec-link-box-content">
+          <span class="edusec-link-box-text"><?= Html::a(Yii::t('app', 'Subjects'), ['/subjects']);?></span>
+          <span class="edusec-link-box-number"><?= app\modules\subjects\models\Subjects::find()->count(); ?></span>
+          <span class="edusec-link-box-desc"></span>
+          <span class="edusec-link-box-bottom"><?= Html::a('<i class="fa fa-plus-square"></i> '.Yii::t('app', 'Create New'), ['/subjects/subjects/create']); ?></span>
+        </div><!-- /.info-box-content -->
+      </div><!-- /.info-box -->
 		</div>
 
 		<div class="col-md-4 col-sm-6 col-xs-12">
-		      <div class="edusec-link-box">
-		        <span class="edusec-link-box-icon bg-aqua"><i class="fa fa-language"></i></span>
-		        <div class="edusec-link-box-content">
-		          <span class="edusec-link-box-text"><?= Html::a(Yii::t('app', 'Languages'), ['/languages']);?></span>
-		          <span class="edusec-link-box-number"><?= app\models\Languages::find()->count(); ?></span>
-			 <span class="edusec-link-box-desc"></span>
-			  <span class="edusec-link-box-bottom"><?= Html::a('<i class="fa fa-plus-square"></i> '.Yii::t('app', 'Create New'), ['/languages/create']); ?></span>
-		        </div><!-- /.info-box-content -->
-		      </div><!-- /.info-box -->
+      <div class="edusec-link-box">
+        <span class="edusec-link-box-icon bg-aqua"><i class="fa fa-language"></i></span>
+        <div class="edusec-link-box-content">
+          <span class="edusec-link-box-text"><?= Html::a(Yii::t('app', 'Languages'), ['/languages']);?></span>
+          <span class="edusec-link-box-number"><?= app\models\Languages::find()->count(); ?></span>
+          <span class="edusec-link-box-desc"></span>
+          <span class="edusec-link-box-bottom"><?= Html::a('<i class="fa fa-plus-square"></i> '.Yii::t('app', 'Create New'), ['/languages/create']); ?></span>
+        </div><!-- /.info-box-content -->
+      </div><!-- /.info-box -->
+		</div>
+
+		<div class="col-md-4 col-sm-6 col-xs-12">
+      <div class="edusec-link-box">
+        <span class="edusec-link-box-icon bg-aqua"><i class="fa fa-calendar-o"></i></span>
+        <div class="edusec-link-box-content">
+          <span class="edusec-link-box-text"><?= Html::a(Yii::t('app', 'National Holidays'), ['/national-holidays']);?></span>
+          <span class="edusec-link-box-number"><?= app\models\NationalHolidays::find()->where(['is_status'=>0])->count(); ?></span>
+          <span class="edusec-link-box-desc"></span>
+          <span class="edusec-link-box-bottom"><?= Html::a('<i class="fa fa-plus-square"></i> '.Yii::t('app', 'Create New'), ['/national-holidays/create']); ?></span>
+        </div><!-- /.info-box-content -->
+      </div><!-- /.info-box -->
+		</div>
+
+		<div class="col-md-4 col-sm-6 col-xs-12">
+	      <div class="edusec-link-box">
+	        <span class="edusec-link-box-icon bg-aqua"><i class="fa fa-files-o floatRight"></i></span>
+	        <div class="edusec-link-box-content">
+	          <span class="edusec-link-box-text"><?= Html::a(Yii::t('app', 'Document Categories'), ['/document-category']);?></span>
+	          <span class="edusec-link-box-number"><?= app\models\DocumentCategory::find()->where(['is_status'=>0])->count(); ?></span>
+            <span class="edusec-link-box-desc"><?php echo Yii::t('app', 'Use Student/Employee Modules'); ?></span>
+            <span class="edusec-link-box-bottom"><?= Html::a('<i class="fa fa-plus-square"></i> '.Yii::t('app', 'Create New'), ['/document-category/create']); ?></span>
+	        </div><!-- /.info-box-content -->
+	      </div><!-- /.info-box -->
 		</div>
 
 
 		<div class="col-md-4 col-sm-6 col-xs-12">
-		      <div class="edusec-link-box">
-		        <span class="edusec-link-box-icon bg-aqua"><i class="fa fa-calendar-o"></i></span>
-		        <div class="edusec-link-box-content">
-		          <span class="edusec-link-box-text"><?= Html::a(Yii::t('app', 'National Holidays'), ['/national-holidays']);?></span>
-		          <span class="edusec-link-box-number"><?= app\models\NationalHolidays::find()->where(['is_status'=>0])->count(); ?></span>
-			 <span class="edusec-link-box-desc"></span>
-			  <span class="edusec-link-box-bottom"><?= Html::a('<i class="fa fa-plus-square"></i> '.Yii::t('app', 'Create New'), ['/national-holidays/create']); ?></span>
-		        </div><!-- /.info-box-content -->
-		      </div><!-- /.info-box -->
+      <div class="edusec-link-box">
+        <span class="edusec-link-box-icon bg-aqua"><i class="fa fa-flag-checkered"></i></span>
+        <div class="edusec-link-box-content">
+          <span class="edusec-link-box-text"><?= Html::a(Yii::t('app', 'Nationality'), ['/nationality']);?></span>
+          <span class="edusec-link-box-number"><?= app\models\Nationality::find()->where(['is_status'=>0])->count(); ?></span>
+          <span class="edusec-link-box-desc"></span>
+          <span class="edusec-link-box-bottom"><?= Html::a('<i class="fa fa-plus-square"></i> '.Yii::t('app', 'Create New'), ['/nationality/create']); ?></span>
+        </div><!-- /.info-box-content -->
+      </div><!-- /.info-box -->
 		</div>
 
-		<div class="col-md-4 col-sm-6 col-xs-12">
-		      <div class="edusec-link-box">
-		        <span class="edusec-link-box-icon bg-aqua"><i class="fa fa-files-o floatRight"></i></span>
-		        <div class="edusec-link-box-content">
-		          <span class="edusec-link-box-text"><?= Html::a(Yii::t('app', 'Document Categories'), ['/document-category']);?></span>
-		          <span class="edusec-link-box-number"><?= app\models\DocumentCategory::find()->where(['is_status'=>0])->count(); ?></span>
-			 <span class="edusec-link-box-desc"><?php echo Yii::t('app', 'Use Student/Employee Modules'); ?></span>
-			  <span class="edusec-link-box-bottom"><?= Html::a('<i class="fa fa-plus-square"></i> '.Yii::t('app', 'Create New'), ['/document-category/create']); ?></span>
-		        </div><!-- /.info-box-content -->
-		      </div><!-- /.info-box -->
-		</div>
-
-
-		<div class="col-md-4 col-sm-6 col-xs-12">
-		      <div class="edusec-link-box">
-		        <span class="edusec-link-box-icon bg-aqua"><i class="fa fa-flag-checkered"></i></span>
-		        <div class="edusec-link-box-content">
-		          <span class="edusec-link-box-text"><?= Html::a(Yii::t('app', 'Nationality'), ['/nationality']);?></span>
-		          <span class="edusec-link-box-number"><?= app\models\Nationality::find()->where(['is_status'=>0])->count(); ?></span>
-			 <span class="edusec-link-box-desc"></span>
-			  <span class="edusec-link-box-bottom"><?= Html::a('<i class="fa fa-plus-square"></i> '.Yii::t('app', 'Create New'), ['/nationality/create']); ?></span>
-		        </div><!-- /.info-box-content -->
-		      </div><!-- /.info-box -->
-		</div>
-		
 
 	</div> <!-- /. End Row-->
-	
 
 </div><!-- /.box-body -->
 </div>
-
-
-
