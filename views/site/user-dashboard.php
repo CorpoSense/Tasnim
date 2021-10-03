@@ -297,7 +297,7 @@ EOF;
     					</ul>
             </div>
             <div class="col col-sm-6">
-              <?= HijriDatePicker::widget(/*['clientOptions' => ['viewMode' => 'months']]*/) ?>
+              <?= HijriDatePicker::widget(['clientOptions' => ['hijri' => true, 'showTodayButton' => true]]) ?>
             </div>
 				   </div>
                             </div><!-- /.box -->
