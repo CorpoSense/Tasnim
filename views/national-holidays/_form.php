@@ -37,7 +37,7 @@ $(document).ready(function(){
                     [
 			'options' => ['placeholder' => Yii::t('app', 'Holiday Date')],
                         'clientOptions' =>[
-                        'dateFormat' => 'dd-mm-yyyy',
+                        //'dateFormat' => 'dd-mm-yyyy',
                         'changeMonth'=> true,
 			'changeYear'=> true,
 			'autoSize'=>true,
