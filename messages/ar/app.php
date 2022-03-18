@@ -181,6 +181,7 @@ return [
     'No Notice....' => 'لا توجد ملحوظات',
     'No data available...' => 'لا توجد بيانات',
     'Not Set' => 'غير مُعد',
+    'Notice' => 'ملاحظة',
     'Notice Board' => 'لوحة الملاحظات',
     'Organization  Name' => 'اسم المؤسسة',
     'Organization Alias' => 'اختصار اسم المؤسسة',

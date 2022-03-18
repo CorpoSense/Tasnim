@@ -29,62 +29,66 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="col-xs-12" style="padding-top: 10px;">
    <div class="box">
       <div class="box-body table-responsive">
-	<div class="notice-index">
-	<?php \yii\widgets\Pjax::begin([
-		'enablePushState' => false,
-		]); ?>
+	  <p>
+        <?= Html::a(Yii::t('app', 'Create'). ' '.Yii::t('app', 'Notice'), ['create'], ['class' => 'btn btn-success']) ?>
+	</p>
 
-	    <?= GridView::widget([
-		'dataProvider' => $dataProvider,
-		'filterModel' => $searchModel,
-		'summary'=>'',
-		'columns' => [
-		    ['class' => 'yii\grid\SerialColumn'],
+		<div class="notice-index">
+		<?php \yii\widgets\Pjax::begin([
+			'enablePushState' => false,
+			]); ?>
 
-		   // 'notice_id',
-		    'notice_title',
-		    'notice_description',
-		    [
-			'attribute' => 'notice_user_type',
-			'value' => function ($model) {
-						return (($model->notice_user_type == 'S') ? 'Student' : (($model->notice_user_type == 'E') ? "Employee" : "General" ));
+			<?= GridView::widget([
+			'dataProvider' => $dataProvider,
+			'filterModel' => $searchModel,
+			'summary'=>'',
+			'columns' => [
+				['class' => 'yii\grid\SerialColumn'],
+
+			// 'notice_id',
+				'notice_title',
+				'notice_description',
+				[
+				'attribute' => 'notice_user_type',
+				'value' => function ($model) {
+							return (($model->notice_user_type == 'S') ? 'Student' : (($model->notice_user_type == 'E') ? "Employee" : "General" ));
+						},
+				'filter' => ['S' => Yii::t('app', 'Student'), 'E' => Yii::t('app', 'Employee'), '0' => Yii::t('app', 'General')],
+			],
+			[
+				'attribute' => 'notice_date',
+				'value' => function($data) {
+					return Yii::$app->formatter->asDate($data->notice_date);
 					},
-			'filter' => ['S' => Yii::t('app', 'Student'), 'E' => Yii::t('app', 'Employee'), '0' => Yii::t('app', 'General')],
-		   ],
-		   [
-			'attribute' => 'notice_date',
-			'value' => function($data) {
-				return Yii::$app->formatter->asDate($data->notice_date);
-				},
-			'filter' => \yii\jui\DatePicker::widget([
-		            'model'=>$searchModel,
-		            'attribute'=>'notice_date',
-		            'clientOptions' =>[
-		                // 'dateFormat' => Yii::$app->params['datePickerFormat'], //'dd-mm-yyyy',
-		                'changeMonth'=> true,
-		                'changeYear'=> true,
-                    'defaultValue'=>null,
-                    'defaultDate'=> null,
-                    'yearRange'=>'1900:'.(date('Y')+1)],
-      			     'options'=>[
-            				'id' => 'notice_date',
-		                'value' => NULL,
-            				'class' => 'form-control'
-      		        ],
-		        ]),
-			'format' => 'html',
-		    ],
-		    [
-				'class' => '\pheme\grid\ToggleColumn',
-				'attribute'=>'is_status',
-				'enableAjax' => true,
-				'filter'=>['1'=>'Deactive', '0'=>'Active']
-		  ],
-		    ['class' => 'app\components\CustomActionColumn'],
-		],
-	    ]); ?>
-	<?php \yii\widgets\Pjax::end(); ?>
-	</div>
+				'filter' => \yii\jui\DatePicker::widget([
+						'model'=>$searchModel,
+						'attribute'=>'notice_date',
+						'clientOptions' =>[
+							// 'dateFormat' => Yii::$app->params['datePickerFormat'], //'dd-mm-yyyy',
+							'changeMonth'=> true,
+							'changeYear'=> true,
+						'defaultValue'=>null,
+						'defaultDate'=> null,
+						'yearRange'=>'1900:'.(date('Y')+1)],
+						'options'=>[
+								'id' => 'notice_date',
+							'value' => NULL,
+								'class' => 'form-control'
+						],
+					]),
+				'format' => 'html',
+				],
+				[
+					'class' => '\pheme\grid\ToggleColumn',
+					'attribute'=>'is_status',
+					'enableAjax' => true,
+					'filter'=>['1'=>'Deactive', '0'=>'Active']
+			],
+				['class' => 'app\components\CustomActionColumn'],
+			],
+			]); ?>
+		<?php \yii\widgets\Pjax::end(); ?>
+		</div>
       </div>
     </div>
 </div>
