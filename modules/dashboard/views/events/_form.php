@@ -50,7 +50,7 @@ if(isset($_REQUEST['event_id'])) {
 			'pluginOptions' => [
 				'autoclose' => true,
 				'maxView' => 0,
-				'startView' => 0,
+				'startView' => 2,
 				'format' => 'dd-mm-yyyy hh:ii:ss',
 			],
 		]);

@@ -120,7 +120,7 @@ return [
     'Select Fees Collect Category' => 'اختر فئة دفع الرسوم',
     'Signature :' => 'التوقيع',
     'Sr.No' => 'ر. المسلسل',
-    'Start Date' => 'تاريخ الاستحقاق',
+    'Start Date' => 'تاريخ البداية',
     'Status' => 'الحالة',
     'Student Details' => 'تفاصيل الطالب',
     'Student Fees Data' => 'تفاصيل الرسوم التي تم تحصيلها',
