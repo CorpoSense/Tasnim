@@ -48,3 +48,5 @@ phpunit.phar
 # private docs
 /docs
 
+# sql
+*.sql
